@@ -1,19 +1,22 @@
 from app.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
+from faker import Faker
+
+fake = Faker()
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
         username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
+    alex = User(
+        username='alex', email='alex@aa.io', password='password')
+    yoshi = User(
+        username='yoshi', email='yoshi@aa.io', password='password')
 
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(alex)
+    db.session.add(yoshi)
     db.session.commit()
 
 
@@ -28,5 +31,5 @@ def undo_users():
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM users"))
-        
+
     db.session.commit()
