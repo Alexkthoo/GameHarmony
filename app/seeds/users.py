@@ -1,20 +1,31 @@
 from app.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
+from faker import Faker
 
+faker = Faker()
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    alex = User(
+    user1 = User(
+        username='Demo', email='demo@aa.io', password='password', )
+    user2 = User(
         username='alex', email='alex@aa.io', password='password')
-    yoshi = User(
+    user3 = User(
         username='yoshi', email='yoshi@aa.io', password='password')
+    user4 = User(
+        username=faker.user_name(), email=faker.email(), password=faker.password())
+    user5 = User(
+        username=faker.user_name(), email=faker.email(), password=faker.password())
+    user6 = User(
+        username=faker.user_name(), email=faker.email(), password=faker.password())
 
-    db.session.add(demo)
-    db.session.add(alex)
-    db.session.add(yoshi)
+    db.session.add(user1)
+    db.session.add(user2)
+    db.session.add(user3)
+    db.session.add(user4)
+    db.session.add(user5)
+    db.session.add(user6)
     db.session.commit()
 
 
