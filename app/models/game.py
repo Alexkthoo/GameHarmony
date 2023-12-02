@@ -41,5 +41,6 @@ class Game(db.Model):
             'description': self.description,
             'img': self.img,
             'system_support': self.system_support,
-            'user_id': self.user_id
+            'user_id': self.user_id,
+            'review': [review.to_dict() for review in self.review]
         }

@@ -7,25 +7,35 @@ faker = Faker()
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    user1 = User(
-        username='Demo', email='demo@aa.io', password='password', )
-    user2 = User(
-        username='alex', email='alex@aa.io', password='password')
-    user3 = User(
-        username='yoshi', email='yoshi@aa.io', password='password')
-    user4 = User(
-        username=faker.user_name(), email=faker.email(), password=faker.password())
-    user5 = User(
-        username=faker.user_name(), email=faker.email(), password=faker.password())
-    user6 = User(
-        username=faker.user_name(), email=faker.email(), password=faker.password())
+    users = [
 
-    db.session.add(user1)
-    db.session.add(user2)
-    db.session.add(user3)
-    db.session.add(user4)
-    db.session.add(user5)
-    db.session.add(user6)
+    User(username='Demo', email='demo@aa.io', password='password'),
+    User(username='alex', email='alex@aa.io', password='password'),
+    User(username='yoshi', email='yoshi@aa.io', password='password'),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    User(username=faker.user_name(), email=faker.email(), password=faker.password()),
+    ]
+
+    db.session.add_all(users)
     db.session.commit()
 
 
