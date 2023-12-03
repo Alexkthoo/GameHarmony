@@ -5,6 +5,10 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+import LandingPage from "./components/Games/LandingPage";
+import AllGames from "./components/Games/AllGames";
+import CreateGame from "./components/Games/CreateGames";
+import SingleGame from "./components/Games/EachGame";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,11 +22,23 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login" >
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/games">
+            <AllGames />
+          </Route>
+          <Route exact path="/games/new">
+            <CreateGame />
+          </Route>
+          <Route exact path="/games/:id">
+            <SingleGame />
           </Route>
         </Switch>
       )}
