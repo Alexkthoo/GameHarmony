@@ -13,3 +13,15 @@ def get_all_games():
     '''
     games = Game.query.all()
     return jsonify([game.to_dict() for game in games])
+
+@game_routes.route("/<int:id>")
+def get_game(id):
+    '''
+    GET SINGLE GAME PAGE
+    '''
+
+    game = Game.query.get(id)
+    if game:
+        return spot.to_dict()
+    else:
+        return {"error": "Game could not be found"}, 404
