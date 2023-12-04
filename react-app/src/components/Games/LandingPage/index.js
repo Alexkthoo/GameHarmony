@@ -28,7 +28,7 @@ function LandingPage() {
   let count = 1;
 
   return (
-    <div className="Games-grid">
+    <div className="games-grid">
       {shuffledGames.map((game) => (
         <NavLink className="test" key={game.id} to={`/games/${game.id}`}>
           <div className="test-123">
