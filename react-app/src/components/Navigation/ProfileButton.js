@@ -55,7 +55,7 @@ function ProfileButton({ user }) {
                 style={{ textDecoration: "none" }}
                 onClick={(e) => closeMenu()}
               >
-                Manage Spots
+                Manage Games
               </NavLink>
             </div>
 

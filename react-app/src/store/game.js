@@ -2,8 +2,8 @@
 
 const GET_ALL_GAMES = "game/GET_ALL_GAMES";
 const GET_ONE_GAME = "game/GET_ONE_GAME";
-const CREATE_GAME = "/game/CREATE_GAME";
-const UPDATE_GAME = "/game/UPDATE_GAME";
+const CREATE_GAME = "game/CREATE_GAME";
+const UPDATE_GAME = "game/UPDATE_GAME";
 
 // action creator
 
@@ -81,24 +81,40 @@ export const getOneGameThunk = (id) => async (dispatch) => {
 //   }
 // };
 
+// export const createGameThunk = (formData) => async (dispatch) => {
+//   try {
+//     const res = await fetch("/api/games/new", {
+//       method: "POST",
+//       body: formData,
+//     });
+
+//     if (!res.ok) {
+//       console.log("There is an error creating a new Game");
+//       return;
+//     }
+
+//     const createdGame = await res.json();
+
+//     dispatch(createGame(createdGame));
+//     return createdGame;
+//   } catch (error) {
+//     console.error("Error creating a new Game:", error);
+//   }
+// };
+
 export const createGameThunk = (formData) => async (dispatch) => {
-  try {
-    const res = await fetch("/api/games/new", {
-      method: "POST",
-      body: formData,
-    });
+  const res = await fetch("/api/games/new", {
+    method: "POST",
+    body: formData,
+  });
 
-    if (!res.ok) {
-      console.log("There is an error creating a new Game");
-      return;
-    }
-
-    const createdGame = await res.json();
-
-    dispatch(createGame(createdGame));
-    return createdGame;
-  } catch (error) {
-    console.error("Error creating a new Game:", error);
+  if (res.ok) {
+    const { resGame } = await res.json();
+    dispatch(createGame(resGame));
+    return resGame;
+  } else {
+    const data = await res.json();
+    return data;
   }
 };
 
@@ -147,6 +163,13 @@ const gamesReducer = (state = initialState, action) => {
     case UPDATE_GAME:
       newState = { ...state, allGames: { ...state.allGames } };
       newState.allGames[action.game.id] = action.game;
+      return newState;
+
+    case CREATE_GAME:
+      newState = { ...state, allGames: { ...state.allGames } };
+      if (action.game) {
+        newState.allGames[action.game.id] = action.game;
+      }
       return newState;
     default:
       return state;
