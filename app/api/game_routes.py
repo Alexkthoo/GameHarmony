@@ -65,3 +65,6 @@ def create_game():
         return {"game": newGame.to_dict()}
 
     return {'errors': form.errors}, 400
+
+
+
