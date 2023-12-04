@@ -25,7 +25,7 @@ function CreateGame() {
     setErrors({});
   }, [submitted]);
 
-  const categories = ["PS5", "Switch", "PC Master Race"];
+  const systems = ["PS5", "Switch", "PC Master Race"];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,11 +47,6 @@ function CreateGame() {
     if (!img)
       errorList.img =
         "Please add a preview image (.jpg, .jpeg, .png, .gif, .pdf)";
-
-    // if(!product_image1) errorList.product_image1 = "Please add a product image"
-    // if(!product_image2) errorList.product_image2 = "Please add a product image"
-    // if(!product_image3) errorList.product_image3 = "Please add a product image"
-    // if(!product_image4) errorList.product_image4 = "Please add a product image"
 
     if (Object.values(errorList).length > 0) {
       setErrors(errorList);
@@ -179,7 +174,7 @@ function CreateGame() {
 
           <textarea
             type="textarea"
-            placeholder="Description of product"
+            placeholder="Description of game"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="description-field"
@@ -202,9 +197,9 @@ function CreateGame() {
             <option value="" disabled>
               Select the system that supports this game!
             </option>
-            {categories.map((categoryOption) => (
-              <option key={categoryOption} value={categoryOption}>
-                {categoryOption}
+            {systems.map((systemsOption) => (
+              <option key={systemsOption} value={systemsOption}>
+                {systemsOption}
               </option>
             ))}
           </select>
@@ -230,8 +225,8 @@ function CreateGame() {
           )}
         </div>
 
-        <div className="create-product-button">
-          <button type="submit">Add Product</button>
+        <div className="create-button">
+          <button type="submit">Add Game</button>
         </div>
         {imageLoading && <p>Loading...</p>}
       </form>

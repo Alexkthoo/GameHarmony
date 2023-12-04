@@ -28,7 +28,7 @@ function LandingPage() {
   let count = 1;
 
   return (
-    <div className="spots-grid">
+    <div className="Games-grid">
       {shuffledGames.map((game) => (
         <NavLink className="test" key={game.id} to={`/games/${game.id}`}>
           <div className="test-123">
@@ -37,14 +37,14 @@ function LandingPage() {
                 <img
                   className="photo"
                   src={game.img}
-                  alt="default spot image"
+                  alt="default game image"
                 />
               </div>
               <div>
                 <div>
                   {count++}. {game.game_title}
                 </div>
-                <p className="spot-description ellipsis-text"></p>
+                <p className="game-description ellipsis-text"></p>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ function SingleGame() {
     dispatch(getOneGameThunk(id));
   }, [dispatch, id]);
 
-  const handleSpotUpdate = () => {
+  const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
   };
 
@@ -37,9 +37,9 @@ function SingleGame() {
       {gameOwner && (
         <div className="delete-box">
           <div>
-            <div className="delete-spot">
-              <h1>Update Spot</h1>
-              <button onClick={handleSpotUpdate}>Update Spot</button>
+            <div className="delete-game">
+              <h1>Update Game</h1>
+              <button onClick={handleGameUpdate}>Update Game</button>
             </div>
           </div>
         </div>
