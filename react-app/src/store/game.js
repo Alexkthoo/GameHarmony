@@ -4,6 +4,7 @@ const GET_ALL_GAMES = "game/GET_ALL_GAMES";
 const GET_ONE_GAME = "game/GET_ONE_GAME";
 const CREATE_GAME = "game/CREATE_GAME";
 const UPDATE_GAME = "game/UPDATE_GAME";
+const DELETE_GAME = "game/DELETE_GAME";
 
 // action creator
 
@@ -32,6 +33,13 @@ const updateGame = (game) => {
   return {
     type: UPDATE_GAME,
     game,
+  };
+};
+
+const deleteGame = (id) => {
+  return {
+    type: DELETE_GAME,
+    id,
   };
 };
 
@@ -139,6 +147,22 @@ export const updateGameThunk = (formData, id) => async (dispatch) => {
   }
 };
 
+export const deleteGameThunk = (id) => async (dispatch) => {
+  try {
+    const res = await fetch(`/api/games/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      const gameError = await res.json();
+      throw new Error(gameError.message);
+    }
+    dispatch(deleteGame(id));
+  } catch (error) {
+    console.error("delete game error", error.message);
+  }
+};
+
 //initial state
 const initialState = {
   allGames: {},
@@ -170,6 +194,11 @@ const gamesReducer = (state = initialState, action) => {
       if (action.game) {
         newState.allGames[action.game.id] = action.game;
       }
+      return newState;
+
+    case DELETE_GAME:
+      newState = { ...state, allGames: { ...state.allGames } };
+      delete newState.allGames[action.id];
       return newState;
     default:
       return state;
