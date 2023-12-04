@@ -77,19 +77,13 @@ function CreateGame() {
       if (res.errors) {
         setErrors(res.errors);
       } else {
-        const newGameId = res.game.id;
-        console.log(
-          "🚀 ~ file: index.js:80 ~ dispatch ~ newGameId:",
-          newGameId
-        );
-        history.push(`/games/${newGameId}`);
+        history.push(`/games`);
         yesSubmitted(true);
         // reset()
         return "success";
       }
     });
   };
-
 
   return (
     <>
