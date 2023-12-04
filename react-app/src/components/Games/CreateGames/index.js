@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createGameThunk } from "../../../store/game";
 
@@ -19,6 +19,9 @@ function CreateGame() {
   const [validationObject, setValidationObject] = useState({});
   const [imageLoading, setImageLoading] = useState(false);
   const [submitted, yesSubmitted] = useState(false);
+
+  const loginUser = useSelector((state) => state.session.user);
+  console.log("🚀 ~ file: index.js:24 ~ CreateGame ~ loginUser:", loginUser);
 
   useEffect(() => {
     yesSubmitted(false);
@@ -69,8 +72,9 @@ function CreateGame() {
       console.log("🚀 ~ file: index.js:74 ~ dispatch ~ form:", formData);
 
       setImageLoading(false);
-      if (errors) {
-        setErrors(errors);
+
+      if (res && res.errors) {
+        setErrors(res.errors);
       } else {
         history.push(`/games`);
         yesSubmitted(true);
@@ -78,6 +82,11 @@ function CreateGame() {
       }
     });
   };
+
+  if (!loginUser) {
+    history.push("/login");
+    return null;
+  }
 
   return (
     <>
