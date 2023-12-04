@@ -65,19 +65,26 @@ function CreateGame() {
 
     setImageLoading(true);
 
-    dispatch(createGameThunk(form)).then((res) => {
+    try {
+      const response = await dispatch(createGameThunk(form));
       console.log("🚀 ~ file: index.js:74 ~ dispatch ~ form:", form);
-      console.log("🚀 ~ file: index.js:75 ~ dispatch ~ res:", res);
+      console.log("🚀 ~ file: index.js:75 ~ dispatch ~ res:", response);
+
       setImageLoading(false);
-      if (res.errors) {
-        setErrors(res.errors);
+
+      if (response && response.errors) {
+        setErrors(response.errors);
       } else {
         history.push(`/games`);
         yesSubmitted(true);
         // reset()
         return "success";
       }
-    });
+    } catch (error) {
+      console.error("Error during API call:", error);
+      setImageLoading(false);
+      // Handle the error as needed (e.g., display an error message to the user)
+    }
   };
 
   return (
