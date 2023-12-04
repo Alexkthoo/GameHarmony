@@ -66,63 +66,26 @@ export const getOneGameThunk = (id) => async (dispatch) => {
   }
 };
 
-// export const createGameThunk = (formData) => async (dispatch) => {
-//   try {
-//     const res = await fetch("/api/games/new", {
-//       method: "POST",
-//       body: formData,
-//     });
-//     console.log("🚀 ~ file: game.js:67 ~ RES FROM API", res);
-
-//     if (res.ok) {
-//       const { game } = await res.json();
-//       dispatch(createGame(game));
-//       return { game };
-//     } else {
-//       const data = await res.json();
-//       console.error("Error creating game:", data);
-//       return data;
-//     }
-//   } catch (error) {
-//     console.error("ERRRRR IN CREATEGAMETHUNK", error);
-//     return ["error occurred while adding a new game"];
-//   }
-// };
-
-// export const createGameThunk = (formData) => async (dispatch) => {
-//   try {
-//     const res = await fetch("/api/games/new", {
-//       method: "POST",
-//       body: formData,
-//     });
-
-//     if (!res.ok) {
-//       console.log("There is an error creating a new Game");
-//       return;
-//     }
-
-//     const createdGame = await res.json();
-
-//     dispatch(createGame(createdGame));
-//     return createdGame;
-//   } catch (error) {
-//     console.error("Error creating a new Game:", error);
-//   }
-// };
-
 export const createGameThunk = (formData) => async (dispatch) => {
-  const res = await fetch("/api/games/new", {
-    method: "POST",
-    body: formData,
-  });
+  try {
+    const res = await fetch("/api/games/new", {
+      method: "POST",
+      body: formData,
+    });
+    console.log("🚀 ~ file: game.js:67 ~ RES FROM API", res);
 
-  if (res.ok) {
-    const { resGame } = await res.json();
-    dispatch(createGame(resGame));
-    return resGame;
-  } else {
-    const data = await res.json();
-    return data;
+    if (res.ok) {
+      const { game } = await res.json();
+      dispatch(createGame(game));
+      return { game };
+    } else {
+      const data = await res.json();
+      console.error("ERROR CREATING GAME", data);
+      return data;
+    }
+  } catch (error) {
+    console.error("ERRRRR IN CREATEGAMETHUNK", error);
+    return ["error occurred while adding a new game"];
   }
 };
 

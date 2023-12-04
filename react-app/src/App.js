@@ -10,6 +10,7 @@ import AllGames from "./components/Games/AllGames";
 import CreateGame from "./components/Games/CreateGames";
 import SingleGame from "./components/Games/EachGame";
 import UpdateGame from "./components/Games/UpdateGames";
+import ManageGames from "./components/Games/ManageGames";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,17 +24,11 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/login">
-            <LoginFormPage />
+          <Route exact path="/games/:id/update">
+            <UpdateGame />
           </Route>
-          <Route exact path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route exact path="/games">
-            <AllGames />
+          <Route exact path="/games/current">
+            <ManageGames />
           </Route>
           <Route exact path="/games/new">
             <CreateGame />
@@ -41,8 +36,17 @@ function App() {
           <Route exact path="/games/:id">
             <SingleGame />
           </Route>
-          <Route exact path="/games/:id/update">
-            <UpdateGame />
+          <Route exact path="/login">
+            <LoginFormPage />
+          </Route>
+          <Route exact path="/signup">
+            <SignupFormPage />
+          </Route>
+          <Route exact path="/games">
+            <AllGames />
+          </Route>
+          <Route exact path="/">
+            <LandingPage />
           </Route>
         </Switch>
       )}
