@@ -127,14 +127,16 @@ export const createGameThunk = (formData) => async (dispatch) => {
 };
 
 export const updateGameThunk = (formData, id) => async (dispatch) => {
+  formData.append("img", new File([], "placeholder.jpg"));
+
   try {
     const res = await fetch(`/api/games/${id}`, {
       method: "PUT",
       body: formData,
     });
+
     if (res.ok) {
       const game = await res.json();
-
       dispatch(updateGame(game));
       return game;
     } else {
@@ -142,7 +144,7 @@ export const updateGameThunk = (formData, id) => async (dispatch) => {
       return data;
     }
   } catch (error) {
-    console.error("error updating", error);
+    console.error("Error updating", error);
     return ["error updating"];
   }
 };
