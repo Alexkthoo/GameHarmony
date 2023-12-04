@@ -53,38 +53,30 @@ function CreateGame() {
       return;
     }
 
-    const form = new FormData();
-    form.append("game_title", gameTitle);
-    form.append("price", price);
-    form.append("developer", developer);
-    form.append("publisher", publisher);
-    form.append("about_game", aboutGame);
-    form.append("description", description);
-    form.append("img", img);
-    form.append("system_support", systemSupport);
+    const formData = new FormData();
+    formData.append("game_title", gameTitle);
+    formData.append("price", price);
+    formData.append("developer", developer);
+    formData.append("publisher", publisher);
+    formData.append("about_game", aboutGame);
+    formData.append("description", description);
+    formData.append("img", img);
+    formData.append("system_support", systemSupport);
 
     setImageLoading(true);
 
-    try {
-      const response = await dispatch(createGameThunk(form));
-      console.log("🚀 ~ file: index.js:74 ~ dispatch ~ form:", form);
-      console.log("🚀 ~ file: index.js:75 ~ dispatch ~ res:", response);
+    dispatch(createGameThunk(formData)).then((res) => {
+      console.log("🚀 ~ file: index.js:74 ~ dispatch ~ form:", formData);
 
       setImageLoading(false);
-
-      if (response && response.errors) {
-        setErrors(response.errors);
+      if (errors) {
+        setErrors(errors);
       } else {
         history.push(`/games`);
         yesSubmitted(true);
-        // reset()
         return "success";
       }
-    } catch (error) {
-      console.error("Error during API call:", error);
-      setImageLoading(false);
-      // Handle the error as needed (e.g., display an error message to the user)
-    }
+    });
   };
 
   return (
