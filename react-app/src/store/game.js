@@ -3,6 +3,7 @@
 const GET_ALL_GAMES = "game/GET_ALL_GAMES";
 const GET_ONE_GAME = "game/GET_ONE_GAME";
 const CREATE_GAME = "/game/CREATE_GAME";
+const UPDATE_GAME = "/game/UPDATE_GAME";
 
 // action creator
 
@@ -23,6 +24,13 @@ const getOneGame = (game) => {
 const createGame = (game) => {
   return {
     type: CREATE_GAME,
+    game,
+  };
+};
+
+const updateGame = (game) => {
+  return {
+    type: UPDATE_GAME,
     game,
   };
 };
@@ -72,6 +80,27 @@ export const createGameThunk = (formData) => async (dispatch) => {
   }
 };
 
+export const updateSpotThunk = (formData, id) => async (dispatch) => {
+  try {
+    const res = await fetch(`/api/games/${id}`, {
+      method: "PUT",
+      body: formData,
+    });
+    if (res.ok) {
+      const game = await res.json();
+      console.log("🚀 ~ file: game.js:90 ~ updateSpotThunk ~ game:", game);
+      dispatch(updateGame(game));
+      return game;
+    } else {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    console.error("error updating", error);
+    return ["error updating"];
+  }
+};
+
 //initial state
 const initialState = {
   allGames: {},
@@ -90,6 +119,11 @@ const gamesReducer = (state = initialState, action) => {
       return newState;
 
     case GET_ONE_GAME:
+      newState = { ...state, allGames: { ...state.allGames } };
+      newState.allGames[action.game.id] = action.game;
+      return newState;
+
+    case UPDATE_GAME:
       newState = { ...state, allGames: { ...state.allGames } };
       newState.allGames[action.game.id] = action.game;
       return newState;

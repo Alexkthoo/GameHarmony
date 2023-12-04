@@ -9,6 +9,7 @@ import LandingPage from "./components/Games/LandingPage";
 import AllGames from "./components/Games/AllGames";
 import CreateGame from "./components/Games/CreateGames";
 import SingleGame from "./components/Games/EachGame";
+import UpdateGame from "./components/Games/UpdateGames";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route exact path="/games/:id">
             <SingleGame />
+          </Route>
+          <Route exact path="/games/:id/update">
+            <UpdateGame />
           </Route>
         </Switch>
       )}
