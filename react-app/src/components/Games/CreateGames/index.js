@@ -77,7 +77,7 @@ function CreateGame() {
       if (res.errors) {
         setErrors(res.errors);
       } else {
-        const newGameId = res.game.id;
+        const newGameId = res.game?.id;
         console.log(
           "🚀 ~ file: index.js:80 ~ dispatch ~ newGameId:",
           newGameId
@@ -89,6 +89,7 @@ function CreateGame() {
       }
     });
   };
+
 
   return (
     <>
