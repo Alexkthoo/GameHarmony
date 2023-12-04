@@ -75,12 +75,12 @@ export const createGameThunk = (formData) => async (dispatch) => {
       return data;
     }
   } catch (error) {
-    console.error("Error in adding game", error);
-    return ["An error occurred while adding a new game"];
+    console.error("adding game error", error);
+    return ["error occurred while adding a new game"];
   }
 };
 
-export const updateSpotThunk = (formData, id) => async (dispatch) => {
+export const updateGameThunk = (formData, id) => async (dispatch) => {
   try {
     const res = await fetch(`/api/games/${id}`, {
       method: "PUT",
@@ -88,7 +88,7 @@ export const updateSpotThunk = (formData, id) => async (dispatch) => {
     });
     if (res.ok) {
       const game = await res.json();
-      console.log("🚀 ~ file: game.js:90 ~ updateSpotThunk ~ game:", game);
+
       dispatch(updateGame(game));
       return game;
     } else {
@@ -115,7 +115,6 @@ const gamesReducer = (state = initialState, action) => {
       action.games.forEach((game) => {
         newState.allGames[game.id] = game;
       });
-      console.log("🚀 ~ file: game.js:43 ~ gamesReducer ~ newState:", newState);
       return newState;
 
     case GET_ONE_GAME:

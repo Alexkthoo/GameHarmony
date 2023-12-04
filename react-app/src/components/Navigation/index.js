@@ -12,16 +12,6 @@ function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const businessOwner = sessionUser;
 
-  const handleSearchInputChange = (event) => {
-    setSearchInput(event.target.value);
-  };
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-
-    history.push(`/spots?search=${encodeURIComponent(searchInput)}`);
-  };
-
   const linkColor = location.pathname === "/" ? "blue" : "red";
 
   return (
@@ -40,33 +30,19 @@ function Navigation({ isLoaded }) {
               </div>
             </NavLink>{" "}
           </div>
-          <div classname="searchbar-home">
-            <form onSubmit={handleSearchSubmit} className="search-form">
-              <input
-                type="text"
-                value={searchInput}
-                onChange={handleSearchInputChange}
-                placeholder="Search by name, category, or price range"
-                className="search-input"
-              />
 
-              <button type="submit">
-                <i className="fas fa-search" style={{ color: "white" }}></i>
-              </button>
-            </form>
-          </div>
           <div id="homepage-buttons">
             {sessionUser ? (
               // <div className="login-dropdown">
               //   {isLoaded && <BusinessButton user={sessionUser} />}
               // </div>
               <NavLink exact to="/games/new" style={{ color: linkColor }}>
-                Create a New Spot
+                Create a New Game
               </NavLink>
             ) : null}
-            <div className="all-spots">
+            <div className="all-games">
               <NavLink exact to="/games" style={{ color: linkColor }}>
-                View All Spots
+                View All Games
               </NavLink>
             </div>
             {/* <button id="write-review-button">Write a Review</button> */}

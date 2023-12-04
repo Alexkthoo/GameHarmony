@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getOneGameThunk, updateSpotThunk } from "../../../store/game";
+import { getOneGameThunk, updateGameThunk } from "../../../store/game";
 import { useHistory } from "react-router-dom";
 
 const UpdateGame = () => {
@@ -70,7 +70,7 @@ const UpdateGame = () => {
     form.append("system_support", systemSupport);
     console.log("🚀 ~ file: index.js:71 ~ handleSubmit ~ form:", form);
 
-    dispatch(updateSpotThunk(form)).then((res) => {
+    dispatch(updateGameThunk(form)).then((res) => {
       if (res.errors) {
         setErrors(res.errors);
       } else {
@@ -177,7 +177,7 @@ const UpdateGame = () => {
 
             <textarea
               type="textarea"
-              placeholder="Description of product"
+              placeholder="Description of Game"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="description-field"
@@ -214,8 +214,8 @@ const UpdateGame = () => {
             )}
           </div>
 
-          <div className="create-product-button">
-            <button type="submit">Update Product</button>
+          <div>
+            <button type="submit">Update Game</button>
           </div>
         </form>
       </div>
