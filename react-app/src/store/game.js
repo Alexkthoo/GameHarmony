@@ -81,11 +81,11 @@ export const getOneGameThunk = (id) => async (dispatch) => {
 //   }
 // };
 
-export const createGameThunk = (game) => async (dispatch) => {
+export const createGameThunk = (formData) => async (dispatch) => {
   try {
     const res = await fetch("/api/games/new", {
       method: "POST",
-      body: game,
+      body: formData,
     });
 
     if (!res.ok) {
