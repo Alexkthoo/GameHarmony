@@ -42,7 +42,7 @@ function SingleGame() {
               <h1>Update Game</h1>
               <button onClick={handleGameUpdate}>Update Game</button>
               <h1>Delete Game</h1>
-              <DeleteGame />
+              <DeleteGame gameId={id} />
             </div>
           </div>
         </div>

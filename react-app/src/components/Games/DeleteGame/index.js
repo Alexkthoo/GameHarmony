@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { deleteGameThunk } from "../../../store/game";
 
-function DeleteGame() {
+function DeleteGame({gameId}) {
   const { id } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
 
   const yesbutton = async () => {
-    console.log("value of id before calling deleteGameThunk:", id);
-    await dispatch(deleteGameThunk(id));
+    console.log("value of id before calling deleteGameThunk:", gameId);
+    await dispatch(deleteGameThunk(gameId));
     history.push(`/games`);
   };
 
