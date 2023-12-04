@@ -2,6 +2,7 @@
 
 const GET_ALL_GAMES = "game/GET_ALL_GAMES";
 const GET_ONE_GAME = "game/GET_ONE_GAME";
+const CREATE_GAME = "/game/CREATE_GAME";
 
 // action creator
 
@@ -15,6 +16,13 @@ const getAllGames = (games) => {
 const getOneGame = (game) => {
   return {
     type: GET_ONE_GAME,
+    game,
+  };
+};
+
+const createGame = (game) => {
+  return {
+    type: CREATE_GAME,
     game,
   };
 };
@@ -42,6 +50,28 @@ export const getOneGameThunk = (id) => async (dispatch) => {
   }
 };
 
+export const createGameThunk = (formData) => async (dispatch) => {
+  try {
+    const res = await fetch("/api/games/new", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      const { game } = await res.json();
+      dispatch(createGame(game));
+      return { game };
+    } else {
+      const data = await res.json();
+      console.error("Error creating game:", data);
+      return data;
+    }
+  } catch (error) {
+    console.error("Error in adding game", error);
+    return ["An error occurred while adding a new game"];
+  }
+};
+
 //initial state
 const initialState = {
   allGames: {},
@@ -62,6 +92,7 @@ const gamesReducer = (state = initialState, action) => {
     case GET_ONE_GAME:
       newState = { ...state, allGames: { ...state.allGames } };
       newState.allGames[action.game.id] = action.game;
+      return newState;
     default:
       return state;
   }
