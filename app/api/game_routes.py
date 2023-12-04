@@ -66,5 +66,31 @@ def create_game():
 
     return {'errors': form.errors}, 400
 
+@login_required
+@game_routes.route('/<int:id>',methods=['PUT'])
+def update_game(id):
+    '''
+    UPDATE A GAME (WHILE LOG IN)
+    '''
 
+    game = Game.query.get(id)
 
+    if not game:
+        return {"message": "Game not found"}, 404
+
+    form = GameForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        game.game_title = form.data["game_title"]
+        game.price = form.data["price"]
+        game.developer = form.data["developer"]
+        game.publisher = form.data["publisher"]
+        game.about_game = form.data["about_game"]
+        game.description = form.data["description"]
+        game.system_support = form.data["system_support"]
+
+        db.session.commit()
+
+        return {"Update Game": game.to_dict()}
+    else:
+        return {"error": form.errors}, 400
