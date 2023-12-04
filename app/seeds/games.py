@@ -14,7 +14,7 @@ def seed_games():
     publisher="Sony Interactive Entertainment",
     about_game="God of War II continues the story of Kratos as he seeks revenge on the gods of Olympus. With new weapons and abilities, Kratos must face powerful foes and overcome challenging puzzles in this epic action-adventure game.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/f/f5/God_of_War_2_Game_Cover.jpg",
+    img="https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_godofwar2_eu_thumb.jpg",
     system_support="PS5",
     user_id=2
 ),
