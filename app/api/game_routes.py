@@ -94,3 +94,25 @@ def update_game(id):
         return {"Update Game": game.to_dict()}
     else:
         return {"error": form.errors}, 400
+
+
+@game_routes.route("/<int:id>", methods=["DELETE"])
+@login_required
+def delete_game(id):
+    """
+    Delete game (while logged in)
+    """
+    currentGame = Game.query.get(id)
+
+    if not currentGame:
+        return {'error': 'Game does not exists'}, 404
+
+    if currentGame.user_id != current_user.id:
+        return {'error': 'You do not have permission to delete this game'}, 401
+
+
+
+
+    db.session.delete(currentGame)
+    db.session.commit()
+    return {'error': 'Game successfully deleted'}

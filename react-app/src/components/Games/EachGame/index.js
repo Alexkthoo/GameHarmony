@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getAllGamesThunk, getOneGameThunk } from "../../../store/game";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import DeleteGame from "../DeleteGame";
 
 function SingleGame() {
   const { id } = useParams();
@@ -40,6 +41,8 @@ function SingleGame() {
             <div className="delete-game">
               <h1>Update Game</h1>
               <button onClick={handleGameUpdate}>Update Game</button>
+              <h1>Delete Game</h1>
+              <DeleteGame />
             </div>
           </div>
         </div>
