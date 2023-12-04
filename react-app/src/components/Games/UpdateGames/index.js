@@ -23,7 +23,7 @@ const UpdateGame = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const categories = ["PS5", "Switch", "PC Master Race"];
+  const system = ["PS5", "Switch", "PC Master Race"];
 
   useEffect(() => {
     dispatch(getOneGameThunk(id)).then((response) => {
@@ -70,7 +70,7 @@ const UpdateGame = () => {
     form.append("system_support", systemSupport);
     console.log("🚀 ~ file: index.js:71 ~ handleSubmit ~ form:", form);
 
-    dispatch(updateGameThunk(form)).then((res) => {
+    dispatch(updateGameThunk(form, id)).then((res) => {
       if (res.errors) {
         setErrors(res.errors);
       } else {
@@ -86,11 +86,7 @@ const UpdateGame = () => {
     <>
       <h1>testing update shit 123</h1>
       <div>
-        <form
-          className="game-form"
-          onSubmit={handleSubmit}
-          encType="multipart/form-data"
-        >
+        <form className="game-form" onSubmit={handleSubmit}>
           <div>
             <label className="label">Game Title</label>
             <input
@@ -200,9 +196,9 @@ const UpdateGame = () => {
               <option value="" disabled>
                 Select the system that supports this game!
               </option>
-              {categories.map((categoryOption) => (
-                <option key={categoryOption} value={categoryOption}>
-                  {categoryOption}
+              {system.map((systemOption) => (
+                <option key={systemOption} value={systemOption}>
+                  {systemOption}
                 </option>
               ))}
             </select>
