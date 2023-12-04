@@ -2,6 +2,9 @@
 
 const GET_ALL_GAMES = "game/GET_ALL_GAMES";
 const GET_ONE_GAME = "game/GET_ONE_GAME";
+const CREATE_GAME = "game/CREATE_GAME";
+const UPDATE_GAME = "game/UPDATE_GAME";
+const DELETE_GAME = "game/DELETE_GAME";
 
 // action creator
 
@@ -16,6 +19,27 @@ const getOneGame = (game) => {
   return {
     type: GET_ONE_GAME,
     game,
+  };
+};
+
+const createGame = (game) => {
+  return {
+    type: CREATE_GAME,
+    game,
+  };
+};
+
+const updateGame = (game) => {
+  return {
+    type: UPDATE_GAME,
+    game,
+  };
+};
+
+const deleteGame = (id) => {
+  return {
+    type: DELETE_GAME,
+    id,
   };
 };
 
@@ -42,6 +66,68 @@ export const getOneGameThunk = (id) => async (dispatch) => {
   }
 };
 
+export const createGameThunk = (formData) => async (dispatch) => {
+  try {
+    const res = await fetch("/api/games/new", {
+      method: "POST",
+      body: formData,
+    });
+    console.log("🚀 ~ file: game.js:67 ~ RES FROM API", res);
+
+    if (res.ok) {
+      const { game } = await res.json();
+      dispatch(createGame(game));
+      return { game };
+    } else {
+      const data = await res.json();
+      console.error("ERROR CREATING GAME", data);
+      return data;
+    }
+  } catch (error) {
+    console.error("ERRRRR IN CREATEGAMETHUNK", error);
+    return ["error occurred while adding a new game"];
+  }
+};
+
+export const updateGameThunk = (formData, id) => async (dispatch) => {
+  formData.append("img", new File([], "placeholder.jpg"));
+
+  try {
+    const res = await fetch(`/api/games/${id}`, {
+      method: "PUT",
+      body: formData,
+    });
+
+    if (res.ok) {
+      const game = await res.json();
+      dispatch(updateGame(game));
+      return game;
+    } else {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    console.error("Error updating", error);
+    return ["error updating"];
+  }
+};
+
+export const deleteGameThunk = (id) => async (dispatch) => {
+  try {
+    const res = await fetch(`/api/games/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      const gameError = await res.json();
+      throw new Error(gameError.message);
+    }
+    dispatch(deleteGame(id));
+  } catch (error) {
+    console.error("delete game error", error.message);
+  }
+};
+
 //initial state
 const initialState = {
   allGames: {},
@@ -56,12 +142,29 @@ const gamesReducer = (state = initialState, action) => {
       action.games.forEach((game) => {
         newState.allGames[game.id] = game;
       });
-      console.log("🚀 ~ file: game.js:43 ~ gamesReducer ~ newState:", newState);
       return newState;
 
     case GET_ONE_GAME:
       newState = { ...state, allGames: { ...state.allGames } };
       newState.allGames[action.game.id] = action.game;
+      return newState;
+
+    case UPDATE_GAME:
+      newState = { ...state, allGames: { ...state.allGames } };
+      newState.allGames[action.game.id] = action.game;
+      return newState;
+
+    case CREATE_GAME:
+      newState = { ...state, allGames: { ...state.allGames } };
+      if (action.game) {
+        newState.allGames[action.game.id] = action.game;
+      }
+      return newState;
+
+    case DELETE_GAME:
+      newState = { ...state, allGames: { ...state.allGames } };
+      delete newState.allGames[action.id];
+      return newState;
     default:
       return state;
   }

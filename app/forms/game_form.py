@@ -11,7 +11,7 @@ class GameForm(FlaskForm):
     developer = StringField("Developer", validators=[DataRequired(), Length(max = 255)])
     publisher = StringField("Publisher", validators=[DataRequired(), Length(max = 255)])
     about_game = StringField("About Game", validators=[DataRequired(), Length(max = 400)])
-    description = StringField("Categories", validators=[DataRequired(), Length(max = 3000)])
+    description = StringField("Description", validators=[DataRequired(), Length(max = 3000)])
     img = FileField("Game Image", validators=[DataRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])
     system_support = SelectField("System Supported", validators=[DataRequired()], choices=[('PS5', 'PS5'), ('Switch', 'Switch'), ('PC Master Race', 'PC Master Race')])
     submit = SubmitField("Submit")
