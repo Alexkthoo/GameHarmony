@@ -34,7 +34,7 @@ def add_game_review(id):
     '''
     game = Game.query.get(id)
 
-    # If current user is the seller of the product, throw an error
+    #if game is owned by the same owner trying to write a review, throw error.
     if game.user_id == current_user.id:
         return {"message": "Forbidden"}, 403
 
@@ -47,7 +47,7 @@ def add_game_review(id):
             review=form.data['review'],
             created_at=datetime.now(),
             user_id=current_user.id,
-            game_id=id  # Use the 'id' from the URL, not the 'game.id'
+            game_id=id
         )
 
         if form.data['img']:
