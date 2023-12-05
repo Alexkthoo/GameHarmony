@@ -36,11 +36,11 @@ function ManageGames() {
     <>
       <div className="manage-spot-container">
         <div className="manage">
-          <h2>Manage Spots</h2>
+          <h2>Manage Games</h2>
           {renderCreateSpotButton && (
             <div id="new-spot-manage">
               <NavLink id="manage-spot-button" to="/games/new">
-                Create a new Spot
+                Create a new Game
               </NavLink>
             </div>
           )}

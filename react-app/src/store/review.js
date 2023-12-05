@@ -1,4 +1,5 @@
 const GET_REVIEWS = "review/GET_REVIEWS";
+const CREATE_REVIEW = "review/CREATE_REVIEW";
 
 // action
 
@@ -6,6 +7,13 @@ const getReviews = (reviews) => {
   return {
     type: GET_REVIEWS,
     reviews,
+  };
+};
+
+const createReview = (review) => {
+  return {
+    type: CREATE_REVIEW,
+    review,
   };
 };
 
@@ -25,6 +33,27 @@ export const getReviewThunks = (gameId) => async (dispatch) => {
   }
 };
 
+export const createGameReview = (formData, id) => async (dispatch) => {
+  try {
+    const res = await fetch(`/api/reviews/${id}/reviews/new`, {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      const { review } = await res.json();
+      dispatch(createReview(review));
+      return review;
+    } else {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    console.error("Error creating review:", error);
+    return { errors: ["An error occurred while creating the review."] };
+  }
+};
+
 //initial state
 const initialState = {
   allReviews: {},
@@ -40,6 +69,18 @@ const reviewsReducer = (state = initialState, action) => {
         newState.allReviews[review.id] = review;
       });
       return newState;
+    case CREATE_REVIEW:
+      if (action.review && action.review.id) {
+        return {
+          ...state,
+          allReviews: {
+            ...state.allReviews,
+            [action.review.id]: action.review,
+          },
+        };
+      }
+      
+      return state;
     default:
       return state;
   }

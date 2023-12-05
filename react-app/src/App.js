@@ -11,6 +11,8 @@ import CreateGame from "./components/Games/CreateGames";
 import SingleGame from "./components/Games/EachGame";
 import UpdateGame from "./components/Games/UpdateGames";
 import ManageGames from "./components/Games/ManageGames";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import CreateGameReviewForm from "./components/Reviews/CreateReviews";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +26,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <ProtectedRoute exact path="/games/:id/reviews/new">
+            <CreateGameReviewForm />
+          </ProtectedRoute>
           <Route exact path="/games/:id/update">
             <UpdateGame />
           </Route>
