@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 609c5457b6ce
+Revision ID: b9351cd3d58d
 Revises:
-Create Date: 2023-12-04 23:29:21.911556
+Create Date: 2023-12-05 00:46:09.101578
 
 """
 from alembic import op
@@ -14,7 +14,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '609c5457b6ce'
+revision = 'b9351cd3d58d'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -30,7 +30,6 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email')
     )
-
     if environment == "production":
         op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
 
@@ -49,13 +48,12 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('game_title')
     )
-
     if environment == "production":
         op.execute(f"ALTER TABLE games SET SCHEMA {SCHEMA};")
 
     op.create_table('reviews',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('rating', sa.Numeric(), nullable=False),
+    sa.Column('rating', sa.Boolean(), nullable=False),
     sa.Column('review', sa.String(length=1000), nullable=False),
     sa.Column('img', sa.String(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=False),
