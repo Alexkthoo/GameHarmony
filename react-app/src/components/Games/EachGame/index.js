@@ -4,6 +4,7 @@ import { getAllGamesThunk, getOneGameThunk } from "../../../store/game";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import DeleteGame from "../DeleteGame";
+import { getReviewThunks } from "../../../store/review";
 
 function SingleGame() {
   const { id } = useParams();
@@ -11,7 +12,10 @@ function SingleGame() {
   console.log("🚀 ~ file: index.js:8 ~ SingleGame ~ idDDDDDDDDDDDDDDDDD:", id);
   const dispatch = useDispatch();
   const game = useSelector((state) => state.games.allGames[id]);
+
   const user = useSelector((state) => state.session.user);
+  const reviews = useSelector((state) => state.reviews.allReviews);
+  console.log("🚀 ~ file: index.js:17 ~ SingleGame ~ reviews:", reviews);
 
   // const currGame = Object.values(game);
   // console.log("🚀 ~ file: index.js:15 ~ SingleGame ~ currGame:", currGame);
@@ -23,10 +27,19 @@ function SingleGame() {
   useEffect(() => {
     // dispatch(getAllGamesThunk(id));
     dispatch(getOneGameThunk(id));
+    dispatch(getReviewThunks(id));
   }, [dispatch, id]);
 
   const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
+  };
+
+  const handleReviewClick = () => {
+    if (!user) {
+      alert("Please sign up to leave a review for this game.");
+      return;
+    }
+    history.push(`/games/${id}/reviews/new`);
   };
 
   if (!game) return null;
@@ -47,6 +60,26 @@ function SingleGame() {
           </div>
         </div>
       )}
+
+      <div className="spot-reviews">
+        {Object.values(reviews).map((review, index) => (
+          <div className="each-review">
+            <div className="icon"></div>
+            <div className="name">
+              <p className="name-p">USER ID {review.user_id}</p>
+
+              <p
+                className={`review-img1 ${review.user_img ? "with-img" : ""}`}
+                key={index}
+              >
+                {review.review}
+              </p>
+              {review.user_img && <img src={review.user_img} alt="User" />}
+            </div>
+          </div>
+        ))}
+      </div>
+      <button onClick={handleReviewClick}>Add Review</button>
     </div>
   );
 }

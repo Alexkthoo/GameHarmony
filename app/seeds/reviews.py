@@ -23,7 +23,7 @@ def seed_reviews():
     )
 
     review3 = Review(
-    rating = True,
+    rating = False,
     review = "It is fun whenever they release a new season/expansion. In between each season can be long and boring",
     created_at = date.today(),
     user_id = 3,
