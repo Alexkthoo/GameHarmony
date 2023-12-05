@@ -49,8 +49,8 @@ export const createGameReview = (formData, id) => async (dispatch) => {
       return data;
     }
   } catch (error) {
-    console.error("Error creating review:", error);
-    return { errors: ["An error occurred while creating the review."] };
+    console.error("creating review error:", error);
+    return { errors: ["there's an error while creating review."] };
   }
 };
 
@@ -79,7 +79,7 @@ const reviewsReducer = (state = initialState, action) => {
           },
         };
       }
-      
+
       return state;
     default:
       return state;
