@@ -12,6 +12,7 @@ function SingleGame() {
   console.log("🚀 ~ file: index.js:8 ~ SingleGame ~ idDDDDDDDDDDDDDDDDD:", id);
   const dispatch = useDispatch();
   const game = useSelector((state) => state.games.allGames[id]);
+
   const user = useSelector((state) => state.session.user);
   const reviews = useSelector((state) => state.reviews.allReviews);
   console.log("🚀 ~ file: index.js:17 ~ SingleGame ~ reviews:", reviews);
@@ -31,6 +32,14 @@ function SingleGame() {
 
   const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
+  };
+
+  const handleReviewClick = () => {
+    if (!user) {
+      alert("Please sign up to leave a review for this game.");
+      return;
+    }
+    history.push(`/games/${id}/reviews/new`);
   };
 
   if (!game) return null;
@@ -70,6 +79,7 @@ function SingleGame() {
           </div>
         ))}
       </div>
+      <button onClick={handleReviewClick}>Add Review</button>
     </div>
   );
 }
