@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import DeleteGame from "../DeleteGame";
 import { deleteReviewThunk, getReviewThunks } from "../../../store/review";
 import DeleteReview from "../../Reviews/DeleteReviews";
+import "./EachGame.css";
 
 function SingleGame() {
   const { id } = useParams();
@@ -18,10 +19,21 @@ function SingleGame() {
   const userId = user?.id;
   const gameOwner = userId === game?.user_id;
 
+  const userHasReviewed =
+    (Array.isArray(reviews) &&
+      reviews.some((review) => review.user?.id === userId)) ||
+    (typeof reviews === "object" &&
+      Object.values(reviews).some((review) => review.user?.id === userId));
+
   useEffect(() => {
     dispatch(getOneGameThunk(id));
+    console.log("Before fetching reviews:", reviews);
     dispatch(getReviewThunks(id));
   }, [dispatch, id]);
+
+  useEffect(() => {
+    console.log("After fetching reviews:", reviews);
+  }, [reviews]);
 
   const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
@@ -47,23 +59,26 @@ function SingleGame() {
   };
 
   return (
-    <div>
-      <h1>{game.game_title}</h1>
-      <img src={game.img} />
-      {gameOwner && (
-        <div className="delete-box">
-          <div>
-            <div className="delete-game">
-              <h1>Update Game</h1>
-              <button onClick={handleGameUpdate}>Update Game</button>
-              <h1>Delete Game</h1>
-              <DeleteGame gameId={id} />
+    <div className="each-game-container">
+      <div className="game-info">
+        <h1>{game.game_title}</h1>
+        <img className="game-img" src={game.img} />
+
+        <div></div>
+        {gameOwner && (
+          <div className="delete-box">
+            <div>
+              <div className="delete-game">
+                <h1>Update Game</h1>
+                <button onClick={handleGameUpdate}>Update Game</button>
+                <h1>Delete Game</h1>
+                <DeleteGame gameId={id} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
-
-      <div className="game-reviews">
+        )}
+      </div>
+      <div className="review-info">
         {Object.values(reviews).map((review, index) => (
           <div className="each-review" key={index}>
             <div className="icon"></div>
@@ -71,22 +86,27 @@ function SingleGame() {
               <p className="name-p">
                 USERNAME: {review.user?.username} said {review.description}
               </p>
-
-              <p className={`review-img1 ${review.user_img ? "with-img" : ""}`}>
-                {review.review}
-              </p>
-              {review.user_img && <img src={review.user_img} alt="User" />}
-              <button onClick={() => handleDeleteReview(review.id)}>
-                Delete Review
-              </button>
-              <button onClick={() => handleUpdateReview(review.id)}>
-                Update Review
-              </button>
+              <img className="review-img" src={review.img} />
+              <div className="delete-review-button">
+                {user &&
+                  user.id === review.user?.id && ( // Check if the user owns the review
+                    <>
+                      <button onClick={() => handleDeleteReview(review.id)}>
+                        Delete Review
+                      </button>
+                      <button onClick={() => handleUpdateReview(review.id)}>
+                        Update Review
+                      </button>
+                    </>
+                  )}
+              </div>
             </div>
           </div>
         ))}
+        {!gameOwner && user && !userHasReviewed && (
+          <button onClick={handleReviewClick}>Add Review</button>
+        )}
       </div>
-      <button onClick={handleReviewClick}>Add Review</button>
     </div>
   );
 }

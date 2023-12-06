@@ -35,5 +35,6 @@ class Review(db.Model):
             'created_at': self.created_at,
             'user_id': self.user_id,
             'game_id': self.game_id,
+            'img':self.img,
             'user': self.user.to_dict()
         }

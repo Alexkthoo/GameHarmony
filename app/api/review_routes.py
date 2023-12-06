@@ -43,14 +43,18 @@ def add_game_review(id):
     '''
     game = Game.query.get(id)
 
-    #if game is owned by the same owner trying to write a review, throw error.
+    # if game is owned by the same owner trying to write a review, throw error.
     if game.user_id == current_user.id:
         return {"message": "Forbidden"}, 403
 
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
+    print("!!!!!!Received form data:!!!!!!!", request.form)  # Add this line to check the received form data
+
     if form.validate_on_submit():
+        print("!!!!!!!Rating before creating new review:!!!!!!!", form.data['rating'])  # Add this line to check the value of 'rating'
+
         newReview = Review(
             rating=form.data['rating'],
             description=form.data['description'],
@@ -75,6 +79,7 @@ def add_game_review(id):
 
         return {"review": newReview.to_dict()}
 
+    print("!!!!!!!!!!Form validation errors:!!!!!!!!!", form.errors)  # Add this line to check form validation errors
     return {"errors": form.errors}, 400
 
 

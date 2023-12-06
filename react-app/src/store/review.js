@@ -145,10 +145,13 @@ const reviewsReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case GET_REVIEWS:
-      newState = { ...state, allReviews: {} };
-      action.reviews.forEach((review) => {
-        newState.allReviews[review.id] = review;
-      });
+      newState = {
+        ...state,
+        allReviews: action.reviews.reduce((reviewsMap, review) => {
+          reviewsMap[review.id] = review;
+          return reviewsMap;
+        }, {}),
+      };
       return newState;
     case CREATE_REVIEW:
       if (action.review && action.review.id) {

@@ -23,7 +23,7 @@ function AllGames() {
   }
 
   //shuffle games to
-  const shuffledGames = [...allGames].sort(() => Math.random() - 0.5);
+  const shuffledGames = [...allGames];
   let count = 1;
   return (
     <div className="games-grid">
