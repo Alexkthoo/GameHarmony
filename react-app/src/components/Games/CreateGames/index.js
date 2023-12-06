@@ -37,8 +37,12 @@ function CreateGame() {
     if (!gameTitle.length || gameTitle.length > 100)
       errorList.gameTitle = "Game Title must be between 1 and 100 characters";
     if (!price.length || price < 0) errorList.price = "Price must be above $0";
-    if (!developer) errorList.developer = "Developer Field require";
-    if (!publisher) errorList.publisher = "Publisher Field require";
+    if (!developer.length || developer.length > 150)
+      errorList.developer =
+        "Developer Field must be between 1 and 150 characters";
+    if (!publisher.length || publisher.length > 150)
+      errorList.publisher =
+        "Publisher Field must be between 1 and 150 characters";
     if (!aboutGame.length || aboutGame.length > 500)
       errorList.aboutGame =
         "Note's About Game must be between 1 and 501 characters";
