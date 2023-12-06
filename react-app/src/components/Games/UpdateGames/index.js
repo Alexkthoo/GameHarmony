@@ -19,7 +19,6 @@ const UpdateGame = () => {
 
   const [submitted, yesSubmitted] = useState(false);
   const game = useSelector((state) => state.games.allGames);
-  console.log("🚀 ~ file: index.js:6 ~ UpdateGame ~ game:", game);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -68,8 +67,6 @@ const UpdateGame = () => {
     form.append("about_game", aboutGame);
     form.append("description", description);
     form.append("system_support", systemSupport);
-    console.log("🚀 ~ file: index.js:71 ~ handleSubmit ~ form:", form);
-
     dispatch(updateGameThunk(form, id)).then((res) => {
       if (res.errors) {
         setErrors(res.errors);

@@ -11,7 +11,7 @@ function CreateGameReviewForm() {
   const user = useSelector((state) => state.session.user);
   const game = useSelector((state) => state.games.allGames[id]);
 
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
   const [description, setDescription] = useState("");
   const [img, setImg] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
@@ -31,7 +31,6 @@ function CreateGameReviewForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
-    console.log("Rating before submission:", rating);
     const formData = new FormData();
     formData.append("img", img);
     formData.append("rating", rating);
@@ -53,7 +52,7 @@ function CreateGameReviewForm() {
         setErrors(res.errors);
       }
     } catch (error) {
-      console.error("Error creating review:", error);
+      console.error("creating review errors", error);
     }
   };
 

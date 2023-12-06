@@ -1,32 +1,24 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {
-  getOneReviewThunk,
-  getReviewThunks,
-  updateReviewThunk,
-} from "../../../store/review";
+import { getOneReviewThunk, updateReviewThunk } from "../../../store/review";
 import { useHistory } from "react-router-dom";
-import { getAllGamesThunk } from "../../../store/game";
 
 const UpdateReview = () => {
   const { id } = useParams();
-  const [rating, setRating] = useState(true);
+  const [rating, setRating] = useState(1);
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
   const [submitted, yesSubmitted] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const reviews = useSelector((state) => state.reviews.allReviews[id]);
-  console.log("checking from thunks", reviews);
 
   useEffect(() => {
-    console.log("getting review id from url", id);
-    dispatch(getOneReviewThunk(id)).then((response) => {
-      console.log("resposne from api:", response);
-      if (response) {
-        setRating(response.rating === 1 ? true : false);
-        setDescription(response.description);
+    dispatch(getOneReviewThunk(id)).then((res) => {
+      if (res) {
+        setRating(res.rating);
+        setDescription(res.description);
       }
     });
   }, [dispatch, id]);
@@ -44,11 +36,10 @@ const UpdateReview = () => {
     }
 
     const form = new FormData();
-    form.append("rating", rating ? 1 : 0);
+    form.append("rating", rating);
     form.append("description", description);
 
     dispatch(updateReviewThunk(form, id)).then((res) => {
-      console.log("🚀 ~ file: index.js:43 ~ dispatch ~ id:", id);
       if (res.errors) {
         setErrors(res.errors);
       } else {

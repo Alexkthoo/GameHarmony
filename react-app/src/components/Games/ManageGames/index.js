@@ -7,14 +7,8 @@ import "./ManageGames.css";
 
 function ManageGames() {
   const user = useSelector((state) => state.session.user);
-  console.log("🚀 ~ file: index.js:5 ~ ManageGames ~ user:", user);
   const games = useSelector((state) => state.games.allGames);
-  console.log("🚀 ~ file: index.js:9 ~ ManageGames ~ THIS IS GAME:", games);
   const allGames = Object.values(games);
-  console.log(
-    "🚀 ~ file: index.js:8 ~ ManageGames ~ THIS IS ALLGAMES:",
-    allGames
-  );
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -25,8 +19,6 @@ function ManageGames() {
   const userGames = allGames.filter((game) => {
     return game.user_id === user.id;
   });
-  console.log("🚀 ~ GAMES THAT USERS OWN", userGames);
-
   if (!user) {
     history.push("/");
   }
@@ -50,7 +42,7 @@ function ManageGames() {
             <div key={game.id} className="games_grid_update-button">
               <NavLink to={`/games/${game.id}`}>
                 <div className="game-card">
-                  <img id="game-img" src={`${game.img}`} alt="img" />
+                  <img src={`${game.img}`} alt="img" />
                   <div className="manage-game-title">{game.game_title}</div>
                 </div>
               </NavLink>
@@ -59,7 +51,6 @@ function ManageGames() {
                   <NavLink
                     style={{ textDecoration: "none" }}
                     to={`/games/${game.id}/update`}
-                    id="update-button"
                   >
                     Update
                   </NavLink>

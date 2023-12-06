@@ -50,10 +50,10 @@ def add_game_review(id):
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    print("!!!!!!Received form data:!!!!!!!", request.form)  # Add this line to check the received form data
+
 
     if form.validate_on_submit():
-        print("!!!!!!!Rating before creating new review:!!!!!!!", form.data['rating'])  # Add this line to check the value of 'rating'
+
 
         newReview = Review(
             rating=form.data['rating'],
@@ -79,7 +79,7 @@ def add_game_review(id):
 
         return {"review": newReview.to_dict()}
 
-    print("!!!!!!!!!!Form validation errors:!!!!!!!!!", form.errors)  # Add this line to check form validation errors
+
     return {"errors": form.errors}, 400
 
 
@@ -108,6 +108,7 @@ def update_review(id):
 
         return {"updateReview": review.to_dict()}
     else:
+        print("Form Errors:", form.errors)
         return {"error": form.errors}, 400
 
 @review_routes.route('/<int:id>/delete', methods=['DELETE'])
