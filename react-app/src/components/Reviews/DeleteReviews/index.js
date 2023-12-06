@@ -18,7 +18,7 @@ function DeleteReview() {
       }
     } catch (error) {
       console.error("Error deleting review:", error);
-      // Handle error as needed
+  
     }
   };
 
