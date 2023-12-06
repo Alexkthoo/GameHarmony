@@ -6,7 +6,7 @@ from ..api.aws_helpers import ALLOWED_EXTENSIONS
 
 
 class ReviewForm(FlaskForm):
-    rating = BooleanField('Rating', validators=[DataRequired()])
+    rating = BooleanField('Rating')
     description = StringField("Review", validators=[DataRequired(), Length(max = 1000)])
     img = FileField("Game Image", validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
     submit = SubmitField("Submit")

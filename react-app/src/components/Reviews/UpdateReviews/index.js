@@ -11,21 +11,21 @@ import { getAllGamesThunk } from "../../../store/game";
 
 const UpdateReview = () => {
   const { id } = useParams();
-  const [rating, setRating] = useState(false);
+  const [rating, setRating] = useState(true);
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
   const [submitted, yesSubmitted] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const reviews = useSelector((state) => state.reviews.allReviews[id]);
-  console.log("Redux Store Reviews:", reviews);
+  console.log("checking from thunks", reviews);
 
   useEffect(() => {
-    console.log("Review ID from URL:", id);
+    console.log("getting review id from url", id);
     dispatch(getOneReviewThunk(id)).then((response) => {
-      console.log("API Response:", response);
+      console.log("resposne from api:", response);
       if (response) {
-        setRating(response.rating === 1);
+        setRating(response.rating === 1 ? true : false);
         setDescription(response.description);
       }
     });
@@ -52,7 +52,7 @@ const UpdateReview = () => {
       if (res.errors) {
         setErrors(res.errors);
       } else {
-        history.push(`/games`);
+        history.push(`/games/${reviews.game_id}`);
         yesSubmitted(true);
       }
     });
@@ -68,7 +68,7 @@ const UpdateReview = () => {
             <input
               type="checkbox"
               checked={rating}
-              onChange={() => setRating((prev) => !prev)}
+              onChange={() => setRating((prevRating) => !prevRating)}
               className="review-rating-input"
             />
 

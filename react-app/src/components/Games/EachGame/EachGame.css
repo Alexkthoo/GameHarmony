@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+
+  .delete-box {
+    margin-top: 20px;
+  }
+
+  .delete-game {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .review-info {
+    margin-top: 20px;
+    border: 3px dashed green;
+  }
+
+  .game-info {
+    margin-top: 20px;
+    border: 3px dashed black;
+  }
+
+  .each-review {
+      margin-bottom: 20px;
+    }
+
+    .name-p {
+        font-weight: bold;
+    }
+
+    .review-img1.with-img {
+        margin-top: 10px;
+    }
+
+    .delete-review-button button {
+        margin-right: 10px;
+        margin-top: 10px;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    .review-info > button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .review-img {
+    max-width: 20%;
+    height: auto;
+    margin-top: 10px;
+    }
+
+    .game-img {
+        width: 1000px;
+        height: 600px;
+        object-fit: fill;
+      }

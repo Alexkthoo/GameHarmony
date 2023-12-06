@@ -11,7 +11,7 @@ function CreateGameReviewForm() {
   const user = useSelector((state) => state.session.user);
   const game = useSelector((state) => state.games.allGames[id]);
 
-  const [rating, setRating] = useState(1);
+  const [rating, setRating] = useState(0);
   const [description, setDescription] = useState("");
   const [img, setImg] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
@@ -24,14 +24,14 @@ function CreateGameReviewForm() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (!description || !img) setDisabled(true);
+    if (!description) setDisabled(true);
     else setDisabled(false);
   }, [description, img]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
-
+    console.log("Rating before submission:", rating);
     const formData = new FormData();
     formData.append("img", img);
     formData.append("rating", rating);
@@ -82,8 +82,8 @@ function CreateGameReviewForm() {
           <label className="label">Rating</label>
           <input
             type="checkbox"
-            checked={rating === 1}
-            onChange={(e) => setRating(e.target.checked ? 1 : 0)}
+            checked={Boolean(rating)}
+            onChange={(e) => setRating(e.target.checked)}
             className="review-rating-input"
           />
 
