@@ -13,11 +13,6 @@ function AllGames() {
   }, [dispatch]);
 
   const allGames = Object.values(games);
-  console.log(
-    "🚀 ~ file: index.js:14 ~ LandingPage ~ asdadasdasallGames:",
-    allGames
-  );
-
   if (!allGames || !allGames.length) {
     return null;
   }

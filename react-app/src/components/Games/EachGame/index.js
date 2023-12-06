@@ -54,7 +54,6 @@ function SingleGame() {
   };
 
   const handleUpdateReview = (reviewId) => {
-    // Redirect to the update review page
     history.push(`/reviews/${reviewId}/update`);
   };
 
@@ -89,7 +88,7 @@ function SingleGame() {
               <img className="review-img" src={review.img} />
               <div className="delete-review-button">
                 {user &&
-                  user.id === review.user?.id && ( // Check if the user owns the review
+                  user.id === review.user?.id && (
                     <>
                       <button onClick={() => handleDeleteReview(review.id)}>
                         Delete Review

@@ -59,7 +59,7 @@ export const getOneReviewThunk = (id) => async (dispatch) => {
     const res = await fetch(`/api/reviews/${id}/reviews`);
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch review with ID ${id}`);
+      throw new Error(`review ${id} not found`);
     }
 
     const review = await res.json();
@@ -68,7 +68,7 @@ export const getOneReviewThunk = (id) => async (dispatch) => {
       dispatch(getOneReview(review[0]));
       return review[0];
     } else {
-      throw new Error(`Review with ID ${id} not found`);
+      throw new Error(`review ${id} not found`);
     }
   } catch (error) {
     console.error(error.message);
