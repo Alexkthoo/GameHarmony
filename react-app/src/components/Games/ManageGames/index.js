@@ -17,7 +17,7 @@ function ManageGames() {
   }, [dispatch]);
 
   const userGames = allGames.filter((game) => {
-    return game.user_id === user.id;
+    return game.user_id === user?.id;
   });
   if (!user) {
     history.push("/");
