@@ -14,6 +14,8 @@ import ManageGames from "./components/Games/ManageGames";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import CreateGameReviewForm from "./components/Reviews/CreateReviews";
 
+import UpdateGameReview from "./components/Reviews/UpdateReviews";
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,6 +30,9 @@ function App() {
         <Switch>
           <ProtectedRoute exact path="/games/:id/reviews/new">
             <CreateGameReviewForm />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/reviews/:id/update">
+            <UpdateGameReview />
           </ProtectedRoute>
           <Route exact path="/games/:id/update">
             <UpdateGame />

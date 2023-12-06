@@ -8,7 +8,7 @@ from datetime import date
 def seed_reviews():
     review1 = Review(
     rating = True,
-    review = "Great game would play again",
+    description = "Great game would play again",
     created_at = date.today(),
     user_id = 2,
     game_id = 1
@@ -16,7 +16,7 @@ def seed_reviews():
 
     review2 = Review(
     rating = False,
-    review = "THIS IS A VERY VERY BORRRRRRRRRRRRRRING GAME",
+    description = "THIS IS A VERY VERY BORRRRRRRRRRRRRRING GAME",
     created_at = date.today(),
     user_id = 2,
     game_id = 3
@@ -24,7 +24,7 @@ def seed_reviews():
 
     review3 = Review(
     rating = False,
-    review = "It is fun whenever they release a new season/expansion. In between each season can be long and boring",
+    description = "It is fun whenever they release a new season/expansion. In between each season can be long and boring",
     created_at = date.today(),
     user_id = 3,
     game_id = 1
