@@ -63,7 +63,7 @@ function SingleGame() {
         </div>
       )}
 
-      <div className="spot-reviews">
+      <div className="game-reviews">
         {Object.values(reviews).map((review, index) => (
           <div className="each-review" key={index}>
             <div className="icon"></div>
