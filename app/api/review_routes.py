@@ -16,7 +16,16 @@ def get_all_reviews():
     reviews = Review.query.all()
     return jsonify([review.to_dict() for review in reviews])
 
-@review_routes.route("/<int:game_id>")
+@review_routes.route("/<int:id>/reviews")
+def reviews_by_id(id):
+    '''
+    GET REVIEWS BY AN ID
+    '''
+
+    reviews = Review.query.filter_by(id=id).all()
+    return jsonify([review.to_dict() for review in reviews])
+
+@review_routes.route("/<int:game_id>/game")
 def game_reviews(game_id):
     '''
     GET REVIEWS FOR A GAME
@@ -69,7 +78,7 @@ def add_game_review(id):
     return {"errors": form.errors}, 400
 
 
-@review_routes.route("/<int:id>", methods=["PUT"])
+@review_routes.route("/<int:id>/update", methods=["PUT"])
 @login_required
 def update_review(id):
     '''

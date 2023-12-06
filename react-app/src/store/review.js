@@ -55,11 +55,43 @@ export const deleteReviewThunk = (reviewId) => async (dispatch) => {
 };
 
 export const getOneReviewThunk = (id) => async (dispatch) => {
-  const res = await fetch(`/api/reviews/${id}`);
-  if (res.ok) {
+  try {
+    const res = await fetch(`/api/reviews/${id}/reviews`);
+
+    if (!res.ok) {
+      // Handle non-OK responses (e.g., 404 Not Found)
+      throw new Error(`Failed to fetch review with ID ${id}`);
+    }
+
     const review = await res.json();
-    dispatch(getOneReview(review));
-    return review;
+
+    if (Array.isArray(review) && review.length > 0) {
+      // If the response is an array with at least one item, use the first item
+      dispatch(getOneReview(review[0]));
+      return review[0];
+    } else {
+      // If the response is an empty array, it means no review was found
+      throw new Error(`Review with ID ${id} not found`);
+    }
+  } catch (error) {
+    console.error(error.message);
+    // Handle the error as needed
+    return null;
+  }
+};
+
+// GET ALL REVIEWS FOR A GAME_ID
+export const getReviewThunks = (gameId) => async (dispatch) => {
+  try {
+    const res = await fetch(`/api/reviews/${gameId}/game`);
+    if (res.ok) {
+      const reviews = await res.json();
+      dispatch(getReviews(reviews));
+      console.log("🚀 ~ file: review.js:20 ~ YOUR REVIEW THUNKS", reviews);
+      return reviews;
+    }
+  } catch (e) {
+    return await e.json();
   }
 };
 
@@ -67,7 +99,7 @@ export const updateReviewThunk = (formData, id) => async (dispatch) => {
   formData.append("img", new File([], "placeholder.jpg"));
 
   try {
-    const res = await fetch(`/api/reviews/${id}`, {
+    const res = await fetch(`/api/reviews/${id}/update`, {
       method: "PUT",
       body: formData,
     });
@@ -83,20 +115,6 @@ export const updateReviewThunk = (formData, id) => async (dispatch) => {
   } catch (error) {
     console.error("Error updating", error);
     return ["error updating"];
-  }
-};
-
-export const getReviewThunks = (gameId) => async (dispatch) => {
-  try {
-    const res = await fetch(`/api/reviews/${gameId}`);
-    if (res.ok) {
-      const reviews = await res.json();
-      dispatch(getReviews(reviews));
-      console.log("🚀 ~ file: review.js:20 ~ YOUR REVIEW THUNKS", reviews);
-      return reviews;
-    }
-  } catch (e) {
-    return await e.json();
   }
 };
 
@@ -155,9 +173,10 @@ const reviewsReducer = (state = initialState, action) => {
       return newState;
 
     case GET_ONE_REVIEW:
-      newState = { ...state, allReviews: { ...state.allReviews } };
-      newState.allReviews[action.review.id] = action.review;
-      return newState;
+      return {
+        ...state,
+        allReviews: { ...state.allReviews, [action.review.id]: action.review },
+      };
 
     case DELETE_REVIEW:
       newState = { ...state, allReviews: { ...state.allReviews } };

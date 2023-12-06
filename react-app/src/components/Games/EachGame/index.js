@@ -41,6 +41,11 @@ function SingleGame() {
     dispatch(deleteReviewThunk(reviewId));
   };
 
+  const handleUpdateReview = (reviewId) => {
+    // Redirect to the update review page
+    history.push(`/reviews/${reviewId}/update`);
+  };
+
   return (
     <div>
       <h1>{game.game_title}</h1>
@@ -74,12 +79,14 @@ function SingleGame() {
               <button onClick={() => handleDeleteReview(review.id)}>
                 Delete Review
               </button>
+              <button onClick={() => handleUpdateReview(review.id)}>
+                Update Review
+              </button>
             </div>
           </div>
         ))}
       </div>
       <button onClick={handleReviewClick}>Add Review</button>
-      <DeleteReview />
     </div>
   );
 }

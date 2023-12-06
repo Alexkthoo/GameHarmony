@@ -1,26 +1,33 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getOneReviewThunk, updateReviewThunk } from "../../../store/review";
+import {
+  getOneReviewThunk,
+  getReviewThunks,
+  updateReviewThunk,
+} from "../../../store/review";
 import { useHistory } from "react-router-dom";
+import { getAllGamesThunk } from "../../../store/game";
 
 const UpdateReview = () => {
   const { id } = useParams();
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(false);
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
-  const [validationObject, setValidationObject] = useState({});
-
   const [submitted, yesSubmitted] = useState(false);
-  const game = useSelector((state) => state.reviews.allReviews);
-  console.log("🚀 ~ file: index.js:6 ~ UpdateGame ~ game:", game);
   const dispatch = useDispatch();
   const history = useHistory();
+  const reviews = useSelector((state) => state.reviews.allReviews[id]);
+  console.log("Redux Store Reviews:", reviews);
 
   useEffect(() => {
+    console.log("Review ID from URL:", id);
     dispatch(getOneReviewThunk(id)).then((response) => {
-      setRating(response.game_title);
-      setDescription(response.description);
+      console.log("API Response:", response);
+      if (response) {
+        setRating(response.rating === 1);
+        setDescription(response.description);
+      }
     });
   }, [dispatch, id]);
 
@@ -37,33 +44,31 @@ const UpdateReview = () => {
     }
 
     const form = new FormData();
-    form.append("rating", rating);
+    form.append("rating", rating ? 1 : 0);
     form.append("description", description);
-    console.log("🚀 ~ file: index.js:71 ~ handleSubmit ~ form:", form);
 
     dispatch(updateReviewThunk(form, id)).then((res) => {
+      console.log("🚀 ~ file: index.js:43 ~ dispatch ~ id:", id);
       if (res.errors) {
         setErrors(res.errors);
       } else {
         history.push(`/games`);
         yesSubmitted(true);
-        // reset()
-        return "success";
       }
     });
   };
 
   return (
     <>
-      <h1>testing update shit 123</h1>
+      <h1>Update Review</h1>
       <div>
         <form className="game-form" onSubmit={handleSubmit}>
           <div>
             <label className="label">Rating</label>
             <input
               type="checkbox"
-              checked={rating === 1}
-              onChange={(e) => setRating(e.target.checked ? 1 : 0)}
+              checked={rating}
+              onChange={() => setRating((prev) => !prev)}
               className="review-rating-input"
             />
 
@@ -76,7 +81,6 @@ const UpdateReview = () => {
 
           <div>
             <label className="label">Description</label>
-
             <textarea
               type="textarea"
               placeholder="Description of Game"
@@ -93,7 +97,7 @@ const UpdateReview = () => {
           </div>
 
           <div>
-            <button type="submit">Update Game</button>
+            <button type="submit">Update Review</button>
           </div>
         </form>
       </div>
