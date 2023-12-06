@@ -42,7 +42,7 @@ function ManageGames() {
             <div key={game.id} className="games_grid_update-button">
               <NavLink to={`/games/${game.id}`}>
                 <div className="game-card">
-                  <img src={`${game.img}`} alt="img" />
+                  <img id="game-img" src={`${game.img}`} alt="img" />
                   <div className="manage-game-title">{game.game_title}</div>
                 </div>
               </NavLink>
@@ -51,6 +51,7 @@ function ManageGames() {
                   <NavLink
                     style={{ textDecoration: "none" }}
                     to={`/games/${game.id}/update`}
+                    id="update-button"
                   >
                     Update
                   </NavLink>
