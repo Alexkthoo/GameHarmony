@@ -11,7 +11,7 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.Boolean, nullable=False)
-    review = db.Column(db.String(1000), nullable=False)
+    description = db.Column(db.String(1000), nullable=False)
     img = db.Column(db.String)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
@@ -31,8 +31,9 @@ class Review(db.Model):
         return {
             'id': self.id,
             'rating': self.rating,
-            'review': self.review,
+            'description': self.description,
             'created_at': self.created_at,
             'user_id': self.user_id,
-            'game_id': self.game_id
+            'game_id': self.game_id,
+            'user': self.user.to_dict()
         }
