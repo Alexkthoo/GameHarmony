@@ -59,23 +59,19 @@ export const getOneReviewThunk = (id) => async (dispatch) => {
     const res = await fetch(`/api/reviews/${id}/reviews`);
 
     if (!res.ok) {
-      // Handle non-OK responses (e.g., 404 Not Found)
       throw new Error(`Failed to fetch review with ID ${id}`);
     }
 
     const review = await res.json();
 
     if (Array.isArray(review) && review.length > 0) {
-      // If the response is an array with at least one item, use the first item
       dispatch(getOneReview(review[0]));
       return review[0];
     } else {
-      // If the response is an empty array, it means no review was found
       throw new Error(`Review with ID ${id} not found`);
     }
   } catch (error) {
     console.error(error.message);
-    // Handle the error as needed
     return null;
   }
 };
@@ -90,8 +86,8 @@ export const getReviewThunks = (gameId) => async (dispatch) => {
       console.log("🚀 ~ file: review.js:20 ~ YOUR REVIEW THUNKS", reviews);
       return reviews;
     }
-  } catch (e) {
-    return await e.json();
+  } catch (error) {
+    return await error.json();
   }
 };
 

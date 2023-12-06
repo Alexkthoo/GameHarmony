@@ -31,15 +31,15 @@ function ManageGames() {
     history.push("/");
   }
 
-  const renderCreateSpotButton = userGames.length === 0;
+  const renderCreateGameButton = userGames.length === 0;
   return (
     <>
-      <div className="manage-spot-container">
+      <div className="manage-game-container">
         <div className="manage">
           <h2>Manage Games</h2>
-          {renderCreateSpotButton && (
-            <div id="new-spot-manage">
-              <NavLink id="manage-spot-button" to="/games/new">
+          {renderCreateGameButton && (
+            <div id="new-game-manage">
+              <NavLink id="manage-game-button" to="/games/new">
                 Create a new Game
               </NavLink>
             </div>
@@ -47,10 +47,10 @@ function ManageGames() {
         </div>
         <div className="games-grid">
           {userGames.map((game) => (
-            <div key={game.id} className="spots-grid-update-button">
+            <div key={game.id} className="games_grid_update-button">
               <NavLink to={`/games/${game.id}`}>
-                <div className="spot-card">
-                  <img id="spot-img" src={`${game.img}`} alt="img" />
+                <div className="game-card">
+                  <img id="game-img" src={`${game.img}`} alt="img" />
                   <div className="manage-game-title">{game.game_title}</div>
                 </div>
               </NavLink>
