@@ -66,8 +66,8 @@ def create_game():
 
     return {'errors': form.errors}, 400
 
-@login_required
 @game_routes.route('/<int:id>',methods=['PUT'])
+@login_required
 def update_game(id):
     '''
     UPDATE A GAME (WHILE LOG IN)

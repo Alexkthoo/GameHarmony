@@ -16,7 +16,16 @@ def get_all_reviews():
     reviews = Review.query.all()
     return jsonify([review.to_dict() for review in reviews])
 
-@review_routes.route("/<int:game_id>")
+@review_routes.route("/<int:id>/reviews")
+def reviews_by_id(id):
+    '''
+    GET REVIEWS BY AN ID
+    '''
+
+    reviews = Review.query.filter_by(id=id).all()
+    return jsonify([review.to_dict() for review in reviews])
+
+@review_routes.route("/<int:game_id>/game")
 def game_reviews(game_id):
     '''
     GET REVIEWS FOR A GAME
@@ -44,7 +53,7 @@ def add_game_review(id):
     if form.validate_on_submit():
         newReview = Review(
             rating=form.data['rating'],
-            review=form.data['review'],
+            description=form.data['description'],
             created_at=datetime.now(),
             user_id=current_user.id,
             game_id=id
@@ -67,3 +76,45 @@ def add_game_review(id):
         return {"review": newReview.to_dict()}
 
     return {"errors": form.errors}, 400
+
+
+@review_routes.route("/<int:id>/update", methods=["PUT"])
+@login_required
+def update_review(id):
+    '''
+    update an existing review
+    '''
+    review = Review.query.get(id)
+    if not review:
+        return {"error": "Review not found"}, 404
+
+    if review.user_id != current_user.id:
+        return {"message": "Forbidden"}, 403
+
+    form = ReviewForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+
+        review.rating = form.data["rating"]
+        review.description = form.data["description"]
+
+        db.session.commit()
+
+        return {"updateReview": review.to_dict()}
+    else:
+        return {"error": form.errors}, 400
+
+@review_routes.route('/<int:id>/delete', methods=['DELETE'])
+@login_required
+def delete_review(id):
+    review = Review.query.get(id)
+    if not review:
+        return {"message": "Review not found"}, 404
+
+    elif review.user_id != current_user.id:
+        return {"message": "You do not have permission to delete this review"}, 403
+    else:
+        db.session.delete(review)
+        db.session.commit()
+        return {"message": "Review delete successfully"}

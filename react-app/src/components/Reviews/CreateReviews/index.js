@@ -12,7 +12,7 @@ function CreateGameReviewForm() {
   const game = useSelector((state) => state.games.allGames[id]);
 
   const [rating, setRating] = useState(1);
-  const [review, setReview] = useState("");
+  const [description, setDescription] = useState("");
   const [img, setImg] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
   const [submitted, yesSubmitted] = useState(false);
@@ -24,9 +24,9 @@ function CreateGameReviewForm() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (!review || !img) setDisabled(true);
+    if (!description || !img) setDisabled(true);
     else setDisabled(false);
-  }, [review, img]);
+  }, [description, img]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ function CreateGameReviewForm() {
     const formData = new FormData();
     formData.append("img", img);
     formData.append("rating", rating);
-    formData.append("review", review);
+    formData.append("description", description);
     formData.append("user_id", user.id);
 
     setImageLoading(true);
@@ -59,7 +59,7 @@ function CreateGameReviewForm() {
 
   const reset = () => {
     setRating(1);
-    setReview("");
+    setDescription("");
     setImg(null);
   };
 
@@ -99,14 +99,14 @@ function CreateGameReviewForm() {
           <input
             type="text"
             placeholder=""
-            value={review}
-            onChange={(e) => setReview(e.target.value)}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             className="review-input"
           />
 
-          {errors.review && (
+          {errors.description && (
             <p style={{ fontSize: "10px", color: "red" }}>
-              *{errors.review[0]}
+              *{errors.description[0]}
             </p>
           )}
         </div>

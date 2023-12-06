@@ -4,17 +4,17 @@
 ;
 }
 
-.manage-spot-container{
+.manage-game-container{
     max-width: 1100px;
 
 }
 
-#spot-img {
+#game-img {
     width: 100px;
     height: 100px;
 }
 
-.spots_grid_update-button {
+.games_grid_update-button {
 
         width: 500px;
         height: 50px;
