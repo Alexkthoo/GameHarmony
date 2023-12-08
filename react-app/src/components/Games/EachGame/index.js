@@ -7,6 +7,7 @@ import DeleteGame from "../DeleteGame";
 import { deleteReviewThunk, getReviewThunks } from "../../../store/review";
 import DeleteReview from "../../Reviews/DeleteReviews";
 import "./EachGame.css";
+import CreateGameReviewForm from "../../Reviews/CreateReviews";
 
 function SingleGame() {
   const { id } = useParams();
@@ -87,23 +88,23 @@ function SingleGame() {
               </p>
               <img className="review-img" src={review.img} />
               <div className="delete-review-button">
-                {user &&
-                  user.id === review.user?.id && (
-                    <>
-                      <button onClick={() => handleDeleteReview(review.id)}>
-                        Delete Review
-                      </button>
-                      <button onClick={() => handleUpdateReview(review.id)}>
-                        Update Review
-                      </button>
-                    </>
-                  )}
+                {user && user.id === review.user?.id && (
+                  <>
+                    <button onClick={() => handleDeleteReview(review.id)}>
+                      Delete Review
+                    </button>
+                    <button onClick={() => handleUpdateReview(review.id)}>
+                      Update Review
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>
         ))}
         {!gameOwner && user && !userHasReviewed && (
-          <button onClick={handleReviewClick}>Add Review</button>
+          // <button onClick={handleReviewClick}>Add Review</button>
+          <CreateGameReviewForm />
         )}
       </div>
     </div>

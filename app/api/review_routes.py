@@ -104,6 +104,19 @@ def update_review(id):
         review.rating = form.data["rating"]
         review.description = form.data["description"]
 
+        if form.data['img']:
+            img = form.data["img"]
+            img.filename = get_unique_filename(img.filename)
+            if review.img:
+                remove_file_from_s3(review.img)
+            uploadReviewImage = upload_file_to_s3(img)
+
+            if "url" not in uploadReviewImage:
+                print(uploadReviewImage)
+                return uploadReviewImage
+            else:
+                review.img = uploadReviewImage["url"]
+
         db.session.commit()
 
         return {"updateReview": review.to_dict()}

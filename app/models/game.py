@@ -16,6 +16,10 @@ class Game(db.Model):
     about_game = db.Column(db.String(400), nullable=False)
     description = db.Column(db.String(3000), nullable=False)
     img = db.Column(db.String, nullable=False)
+    # img2 = db.Column(db.String)
+    # img3 = db.Column(db.String)
+    # img4 = db.Column(db.String)
+    # img5 = db.Column(db.String)
     system_support = db.Column(db.String(100), nullable=False)
 
 

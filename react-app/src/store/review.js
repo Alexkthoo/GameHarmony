@@ -92,8 +92,6 @@ export const getReviewThunks = (gameId) => async (dispatch) => {
 };
 
 export const updateReviewThunk = (formData, id) => async (dispatch) => {
-  formData.append("img", new File([], "placeholder.jpg"));
-
   try {
     const res = await fetch(`/api/reviews/${id}/update`, {
       method: "PUT",

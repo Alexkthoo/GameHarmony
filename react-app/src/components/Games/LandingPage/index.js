@@ -22,29 +22,84 @@ function LandingPage() {
 
   let count = 1;
 
+  const [topGame, secondGame, thirdGame, ...remainingGames] = shuffledGames;
+
   return (
-    <div className="games-grid">
-      {shuffledGames.map((game) => (
-        <NavLink className="test" key={game.id} to={`/games/${game.id}`}>
-          <div className="test-123">
-            <div>
-              <div>
-                <img
-                  className="photo"
-                  src={game.img}
-                  alt="default game image"
-                />
-              </div>
-              <div>
-                <div>
-                  {count++}. {game.game_title}
-                </div>
-                <p className="game-description ellipsis-text"></p>
-              </div>
-            </div>
+    <div className="games-landing-flex">
+      <NavLink
+        className="top-game-container"
+        key={topGame.id}
+        to={`/games/${topGame.id}`}
+      >
+        <div className="top-left-contain">
+          <img
+            className="top-left-photo"
+            src={topGame.img}
+            alt="default game image"
+          />
+        </div>
+        <div className="top-right-contain">
+          <div>{topGame.game_title}</div>
+        </div>
+      </NavLink>
+
+      {/* Three games side by side */}
+      <div className="side-by-side-games">
+        {/* Second game */}
+
+        <NavLink
+          className="bottom-left-contain"
+          key={secondGame.id}
+          to={`/games/${secondGame.id}`}
+        >
+          <div className="bottom-tophalf-container">
+            <img
+              className="bottom-photo"
+              src={secondGame.img}
+              alt="default game image"
+            />
+          </div>
+          <div className="bottom-bottomhalf-container">
+            {secondGame.game_title}
           </div>
         </NavLink>
-      ))}
+
+        {/* Third game */}
+
+        <NavLink
+          className="bottom-middle-contain"
+          key={thirdGame.id}
+          to={`/games/${thirdGame.id}`}
+        >
+          <div className="bottom-tophalf-container">
+            <img
+              className="bottom-photo"
+              src={thirdGame.img}
+              alt="default game image"
+            />
+          </div>
+          <div className="bottom-bottomhalf-container">
+            {thirdGame.game_title}
+          </div>
+        </NavLink>
+
+        {/* Fourth game (if there are more than 3 games) */}
+        {remainingGames.length > 0 && (
+          <NavLink
+            className="bottom-right-contain"
+            key={remainingGames[0].id}
+            to={`/games/${remainingGames[0].id}`}
+          >
+            <img
+              className="bottom-photo"
+              src={remainingGames[0].img}
+              alt="default game image"
+            />
+
+            <div>{remainingGames[0].game_title}</div>
+          </NavLink>
+        )}
+      </div>
     </div>
   );
 }
