@@ -10,15 +10,18 @@ const UpdateReview = () => {
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
   const [submitted, yesSubmitted] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const reviews = useSelector((state) => state.reviews.allReviews[id]);
+  const [img, setImg] = useState(reviews ? reviews.img : null);
 
   useEffect(() => {
     dispatch(getOneReviewThunk(id)).then((res) => {
       if (res) {
         setRating(res.rating);
         setDescription(res.description);
+        setImg(res.img);
       }
     });
   }, [dispatch, id]);
@@ -38,6 +41,9 @@ const UpdateReview = () => {
     const form = new FormData();
     form.append("rating", rating);
     form.append("description", description);
+    if (img !== null) {
+      form.append("img", img);
+    }
 
     dispatch(updateReviewThunk(form, id)).then((res) => {
       if (res.errors) {
@@ -53,7 +59,11 @@ const UpdateReview = () => {
     <>
       <h1>Update Review</h1>
       <div>
-        <form className="game-form" onSubmit={handleSubmit}>
+        <form
+          className="game-form"
+          onSubmit={handleSubmit}
+          encType="multipart/form-data"
+        >
           <div>
             <label className="label">Rating</label>
             <input
@@ -84,6 +94,25 @@ const UpdateReview = () => {
               <p style={{ fontSize: "10px", color: "red" }}>
                 *{errors.description}
               </p>
+            )}
+          </div>
+
+          <div>
+            <label className="label">Review Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              placeholder=""
+              onChange={(e) => {
+                const file = e.target.files[0];
+                console.log("Selected File:", file);
+                setImg(file);
+              }}
+              className=""
+            />
+
+            {errors.img && (
+              <p style={{ fontSize: "10px", color: "red" }}>*{errors.img[0]}</p>
             )}
           </div>
 

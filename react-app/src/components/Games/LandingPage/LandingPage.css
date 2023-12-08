@@ -1,18 +1,88 @@
-.games-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-bottom: 100px;
-    gap: 20px;
+.games-landing-flex {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.top-left-photo {
+    width: 500px;
+    height: 250px;
+    object-fit: fill;
 }
 
-.photo {
-    width: 50px;
-    height: 50px;
+.bottom-photo {
+    width: 335px;
+    height: 170px;
 }
 
 .test {
     width: 200px;
     height: 100px;
+
+
+}
+
+.top-game-container{
+    border: 3px dashed green;
+    min-width: 1024px;
+
+    display: flex;
+
+    justify-content: center;
+    height: 250px;
+}
+
+.top-left-contain{
+    flex:50%;
+}
+
+.top-right-contain{
+    flex:50%;
+}
+
+
+
+.side-by-side-games {
+    border: 3px dashed green;
+    min-width: 1024px;
+
+    display: flex;
+
+    justify-content: center;
+    height: 250px;
+    margin-top: 50px;
+
+}
+
+.bottom-right-contain {
+    display: flex;
+    flex: 33.33%;
+    border: 3px dashed green;
+    flex-direction: column;
+}
+
+.bottom-middle-contain {
+    display: flex;
+    flex: 33.33%;
+    border: 3px dashed green;
+    flex-direction: column;
+}
+
+.bottom-left-contain {
+    display: flex;
+    flex: 33.33%;
+    border: 3px dashed green;
+    flex-direction: column;
+}
+
+.bottom-tophalf-container {
+    display: flex;
+    flex-direction: column;
+    flex: 70%;
+}
+
+.bottom-bottomhalf-container{
+    flex: 30%;
 }

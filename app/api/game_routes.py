@@ -60,6 +60,8 @@ def create_game():
         else:
             newGame.img = uploadPreviewImage["url"]
 
+
+
         db.session.add(newGame)
         db.session.commit()
         return {"game": newGame.to_dict()}

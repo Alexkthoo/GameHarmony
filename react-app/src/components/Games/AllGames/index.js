@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllGamesThunk } from "../../../store/game";
 import { NavLink } from "react-router-dom";
-import "../LandingPage/LandingPage.css";
+import "./AllGames.css"
+
 
 function AllGames() {
   const games = useSelector((state) => state.games.allGames);

@@ -19,11 +19,18 @@ function SignupFormModal() {
     e.preventDefault();
     let errorList = {};
 
-    if (!username) errorList.username = "First Name is required";
-    if (!email || !email.includes("@") || !email.includes("."))
-      errorList.email = "Valid email is required";
-    if (!password || password.length < 6)
-      errorList.password = "Valid Password is required";
+    if (!username) errorList.username = "Please enter a username";
+    if ((username && username.length < 5) || username.length > 25)
+      errorList.username =
+        "Please enter a username between 5 and 25 characters long";
+    if (!email) errorList.email = "Please enter an email address";
+    else if (email && !email.includes("@"))
+      errorList.email = "Email must contain @ symbol";
+    else if (email && !email.endsWith(".com"))
+      errorList.email = "Email must end in .com";
+    if (!password) errorList.password = "Please enter a password";
+    if (password && password.length < 6)
+      errorList.password = "Please enter a password longer than 6 characters";
     if (password !== confirmPassword)
       errorList.confirmPassword = "Passwords must match";
 
