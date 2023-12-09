@@ -67,6 +67,7 @@ function SignupFormModal() {
         <label>
           Email
           <input
+            className="sign-up-input"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -79,6 +80,7 @@ function SignupFormModal() {
         <label>
           Username
           <input
+            className="sign-up-input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -91,6 +93,7 @@ function SignupFormModal() {
         <label>
           Password
           <input
+            className="sign-up-input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -103,6 +106,7 @@ function SignupFormModal() {
         <label>
           Confirm Password
           <input
+            className="sign-up-input"
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}

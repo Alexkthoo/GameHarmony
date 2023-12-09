@@ -95,7 +95,13 @@ function CreateGameReviewForm() {
 
         <div>
           <label className="label">Review</label>
-          <input
+          <textarea
+            style={{
+              height: "50px",
+              width: "400px",
+              paddingLeft: "5px",
+              paddingTop: "5px",
+            }}
             type="text"
             placeholder=""
             value={description}

@@ -42,7 +42,7 @@ const UpdateGame = () => {
 
     if (!gameTitle.length || gameTitle.length > 100)
       errorList.gameTitle = "Game Title must be between 1 and 100 characters";
-    if (isNaN(price) || price < 0) errorList.price = "Price must be above $0";
+    if (!price || price < 0) errorList.price = "Price must be above $0";
     if (!developer) errorList.developer = "Developer Field require";
     if (!publisher) errorList.publisher = "Publisher Field require";
     if (!aboutGame.length || aboutGame.length > 500)

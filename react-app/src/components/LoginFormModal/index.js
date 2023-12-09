@@ -48,6 +48,7 @@ function LoginFormModal() {
         <label>
           Email
           <input
+            className="login-input"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -57,6 +58,7 @@ function LoginFormModal() {
         <label>
           Password
           <input
+            className="login-input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
