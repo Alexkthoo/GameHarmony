@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createGameThunk } from "../../../store/game";
+import "./CreateGames.css";
 
 function CreateGame() {
   const dispatch = useDispatch();
@@ -93,16 +94,17 @@ function CreateGame() {
   }
 
   return (
-    <>
+    <div className="create-game-main-div">
       <h1>CREATE MI GAMEEEEEEEEEEE PLEASE</h1>
       <form
-        className="game-form"
+        className="create-game-form"
         onSubmit={handleSubmit}
         encType="multipart/form-data"
       >
-        <div>
+        <div className="create-test">
           <label className="label">Game Title</label>
           <input
+            className="create-game-input"
             type="text"
             placeholder="Game Title"
             value={gameTitle}
@@ -119,13 +121,13 @@ function CreateGame() {
         <div>
           <label className="label">Price</label>
           <input
+            className="create-game-input"
             type="number"
             step="0.01"
             placeholder="Price of Game"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             min="0"
-            className=""
           />
 
           {errors.price && (
@@ -237,12 +239,14 @@ function CreateGame() {
           )}
         </div>
 
-        <div className="create-button">
-          <button type="submit">Add Game</button>
+        <div className="create-button-div">
+          <button className="create-button" type="submit">
+            Add Game
+          </button>
         </div>
         {imageLoading && <p>Loading...</p>}
       </form>
-    </>
+    </div>
   );
 }
 

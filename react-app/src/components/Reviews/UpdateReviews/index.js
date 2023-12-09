@@ -83,6 +83,12 @@ const UpdateReview = () => {
           <div>
             <label className="label">Description</label>
             <textarea
+              style={{
+                height: "50px",
+                width: "400px",
+                paddingLeft: "5px",
+                paddingTop: "5px",
+              }}
               type="textarea"
               placeholder="Description of Game"
               value={description}

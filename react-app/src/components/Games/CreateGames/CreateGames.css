@@ -1,0 +1,41 @@
+.create-game-form {
+    width: 500px;
+    padding: 20px;
+  }
+
+  .create-button {
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    background-color: #ebebeb;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .create-button-div {
+    padding-top: 20px;
+  }
+
+  .create-game-main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .create-game-form{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 10px;
+  }
+
+  .create-game-input{
+    width: 100%;
+  }
+
+  .create-test{
+    width: 400px;
+  }

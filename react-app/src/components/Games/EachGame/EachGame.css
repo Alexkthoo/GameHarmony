@@ -68,9 +68,6 @@ body {
       cursor: pointer;
     }
 
-    button:hover {
-        background-color: #0056b3;
-    }
 
     .review-img {
     max-width: 20%;
