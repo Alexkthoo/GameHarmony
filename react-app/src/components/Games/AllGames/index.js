@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllGamesThunk } from "../../../store/game";
 import { NavLink } from "react-router-dom";
-import "./AllGames.css"
-
+import "./AllGames.css";
 
 function AllGames() {
   const games = useSelector((state) => state.games.allGames);
@@ -14,32 +13,16 @@ function AllGames() {
   }, [dispatch]);
 
   const allGames = Object.values(games);
-  if (!allGames || !allGames.length) {
-    return null;
-  }
 
-  //shuffle games to
-  const shuffledGames = [...allGames];
-  let count = 1;
   return (
-    <div className="games-grid">
-      {shuffledGames.map((game) => (
-        <NavLink className="test" key={game.id} to={`/games/${game.id}`}>
+    <div className="all-games-grid">
+      {allGames.map((game) => (
+        <NavLink key={game.id} to={`/games/${game.id}`} className="game-link">
           <div className="test-123">
-            <div>
-              <div>
-                <img
-                  className="photo"
-                  src={game.img}
-                  alt="default game image"
-                />
-              </div>
-              <div>
-                <div>
-                  {count++}. {game.game_title}
-                </div>
-                <p className="game-description ellipsis-text"></p>
-              </div>
+            <img src={game.img} alt="default game image" className="photo" />
+            <div className="game-details">
+              <div className="game-title">{game.game_title}</div>
+              <p className="game-description ellipsis-text"></p>
             </div>
           </div>
         </NavLink>

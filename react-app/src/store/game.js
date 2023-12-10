@@ -72,7 +72,7 @@ export const createGameThunk = (formData) => async (dispatch) => {
       method: "POST",
       body: formData,
     });
-    console.log("🚀 ~ file: game.js:67 ~ RES FROM API", res);
+
 
     if (res.ok) {
       const { game } = await res.json();

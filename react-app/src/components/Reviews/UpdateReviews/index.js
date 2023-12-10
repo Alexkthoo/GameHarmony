@@ -111,7 +111,7 @@ const UpdateReview = () => {
               placeholder=""
               onChange={(e) => {
                 const file = e.target.files[0];
-                console.log("Selected File:", file);
+
                 setImg(file);
               }}
               className=""

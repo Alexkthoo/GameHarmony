@@ -28,12 +28,12 @@ function SingleGame() {
 
   useEffect(() => {
     dispatch(getOneGameThunk(id));
-    console.log("Before fetching reviews:", reviews);
+
     dispatch(getReviewThunks(id));
   }, [dispatch, id]);
 
   useEffect(() => {
-    console.log("After fetching reviews:", reviews);
+
   }, [reviews]);
 
   const handleGameUpdate = () => {
