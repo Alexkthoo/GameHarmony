@@ -9,7 +9,7 @@ function DeleteGame({gameId}) {
   const history = useHistory();
 
   const yesbutton = async () => {
-    console.log("value of id before calling deleteGameThunk:", gameId);
+
     await dispatch(deleteGameThunk(gameId));
     history.push(`/games`);
   };

@@ -41,7 +41,7 @@ const deleteReview = (review) => ({
 export const deleteReviewThunk = (reviewId) => async (dispatch) => {
   let res;
   try {
-    console.log("Deleting review with ID:", reviewId);
+
     res = await fetch(`/api/reviews/${reviewId}/delete`, {
       method: "DELETE",
     });
@@ -83,7 +83,7 @@ export const getReviewThunks = (gameId) => async (dispatch) => {
     if (res.ok) {
       const reviews = await res.json();
       dispatch(getReviews(reviews));
-      console.log("🚀 ~ file: review.js:20 ~ YOUR REVIEW THUNKS", reviews);
+  
       return reviews;
     }
   } catch (error) {

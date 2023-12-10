@@ -22,7 +22,7 @@ function CreateGame() {
   const [submitted, yesSubmitted] = useState(false);
 
   const loginUser = useSelector((state) => state.session.user);
-  console.log("🚀 ~ file: index.js:24 ~ CreateGame ~ loginUser:", loginUser);
+
 
   useEffect(() => {
     yesSubmitted(false);
@@ -74,7 +74,7 @@ function CreateGame() {
     setImageLoading(true);
 
     dispatch(createGameThunk(formData)).then((res) => {
-      console.log("🚀 ~ file: index.js:74 ~ dispatch ~ form:", formData);
+
 
       setImageLoading(false);
 

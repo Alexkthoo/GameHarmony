@@ -1,18 +1,37 @@
-.games-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-bottom: 100px;
-    gap: 20px;
-}
+.all-games-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
 
-.photo {
-    width: 50px;
-    height: 50px;
-}
+  .test-123 {
+    width: 100%;
+    max-width: 600px;
+    height: 200px; /* Set a fixed height for each game container */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
 
-.test {
-    width: 200px;
-    height: 100px;
-}
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Use 'contain' instead of 'cover' */
+    border-bottom: 1px solid #ccc;
+  }
+
+  .game-details {
+    padding: 10px;
+  }
+
+  .game-title {
+    font-weight: bold;
+  }
+
+  .game-link {
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+  }
