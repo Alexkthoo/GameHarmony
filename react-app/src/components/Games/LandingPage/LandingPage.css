@@ -7,11 +7,14 @@
 
 }
 .top-left-photo {
-    width: 500px;
-    height: 250px;
+    width: 100%;
+    height: 350px;
     object-fit: fill;
 }
 
+.top-right-contain {
+    padding-left: 15px;
+}
 .bottom-photo {
     width: 335px;
     height: 170px;
@@ -25,13 +28,13 @@
 }
 
 .top-game-container{
-    border: 3px dashed green;
-    min-width: 1024px;
+    border: 2px groove black;
+
 
     display: flex;
 
     justify-content: center;
-    height: 250px;
+    height: 350px;
 }
 
 .top-left-contain{
@@ -45,7 +48,7 @@
 
 
 .side-by-side-games {
-    border: 3px dashed green;
+
     min-width: 1024px;
 
     display: flex;
@@ -53,28 +56,35 @@
     justify-content: center;
     height: 250px;
     margin-top: 50px;
+    gap: 25px;
 
 }
 
 .bottom-right-contain {
     display: flex;
     flex: 33.33%;
-    border: 3px dashed green;
+    border: 2px groove black;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .bottom-middle-contain {
     display: flex;
     flex: 33.33%;
-    border: 3px dashed green;
+    border: 2px groove black;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .bottom-left-contain {
     display: flex;
     flex: 33.33%;
-    border: 3px dashed green;
+    border: 2px groove black;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .bottom-tophalf-container {
@@ -85,4 +95,26 @@
 
 .bottom-bottomhalf-container{
     flex: 30%;
+    font-size: 23px;
 }
+
+.lp-game-title{
+    font-size: 38px;
+
+}
+
+.lp-about-game {
+    text-decoration: none;
+    margin-top: 15px;
+  }
+
+
+  .lp-view-all-games{
+    padding-top: 50px;
+  }
+
+  .lp-view-all-games-button{
+    height: 60px;
+    width: 300px;
+    font-size: 30px;
+  }

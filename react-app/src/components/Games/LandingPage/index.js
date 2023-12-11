@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllGamesThunk } from "../../../store/game";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import "./LandingPage.css";
 
 function LandingPage() {
   const games = useSelector((state) => state.games.allGames);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getAllGamesThunk());
@@ -24,6 +25,10 @@ function LandingPage() {
 
   const [topGame, secondGame, thirdGame, ...remainingGames] = shuffledGames;
 
+  const handleViewAllGames = () => {
+    history.push("/games");
+  };
+
   return (
     <div className="games-landing-flex">
       <NavLink
@@ -39,51 +44,46 @@ function LandingPage() {
           />
         </div>
         <div className="top-right-contain">
-          <div>{topGame.game_title}</div>
+          <div className="lp-game-title">{topGame.game_title}</div>
+          <div className="lp-about-game">{topGame.about_game}</div>
         </div>
       </NavLink>
 
-      {/* Three games side by side */}
       <div className="side-by-side-games">
-        {/* Second game */}
-
         <NavLink
           className="bottom-left-contain"
           key={secondGame.id}
-          to={`/games/${secondGame.id}`}
+          to={`/games/${secondGame?.id}`}
         >
           <div className="bottom-tophalf-container">
             <img
               className="bottom-photo"
-              src={secondGame.img}
+              src={secondGame?.img}
               alt="default game image"
             />
           </div>
           <div className="bottom-bottomhalf-container">
-            {secondGame.game_title}
+            {secondGame?.game_title}
           </div>
         </NavLink>
-
-        {/* Third game */}
 
         <NavLink
           className="bottom-middle-contain"
-          key={thirdGame.id}
-          to={`/games/${thirdGame.id}`}
+          key={thirdGame?.id}
+          to={`/games/${thirdGame?.id}`}
         >
           <div className="bottom-tophalf-container">
             <img
               className="bottom-photo"
-              src={thirdGame.img}
+              src={thirdGame?.img}
               alt="default game image"
             />
           </div>
           <div className="bottom-bottomhalf-container">
-            {thirdGame.game_title}
+            {thirdGame?.game_title}
           </div>
         </NavLink>
 
-        {/* Fourth game (if there are more than 3 games) */}
         {remainingGames.length > 0 && (
           <NavLink
             className="bottom-right-contain"
@@ -96,9 +96,19 @@ function LandingPage() {
               alt="default game image"
             />
 
-            <div>{remainingGames[0].game_title}</div>
+            <div className="bottom-bottomhalf-container">
+              {remainingGames[0].game_title}
+            </div>
           </NavLink>
         )}
+      </div>
+      <div className="lp-view-all-games">
+        <button
+          onClick={handleViewAllGames}
+          className="lp-view-all-games-button"
+        >
+          VIEW ALL GAMES
+        </button>
       </div>
     </div>
   );

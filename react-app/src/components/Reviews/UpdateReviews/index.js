@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOneReviewThunk, updateReviewThunk } from "../../../store/review";
 import { useHistory } from "react-router-dom";
+import "./UpdateReviews.css";
 
 const UpdateReview = () => {
   const { id } = useParams();
@@ -56,7 +57,7 @@ const UpdateReview = () => {
   };
 
   return (
-    <>
+    <div className="update-review-container">
       <h1>Update Review</h1>
       <div>
         <form
@@ -64,8 +65,8 @@ const UpdateReview = () => {
           onSubmit={handleSubmit}
           encType="multipart/form-data"
         >
-          <div>
-            <label className="label">Rating</label>
+          <div className="update-review-rating">
+            <label className="label">Did you enjoy the game?</label>
             <input
               type="checkbox"
               checked={rating}
@@ -127,7 +128,7 @@ const UpdateReview = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

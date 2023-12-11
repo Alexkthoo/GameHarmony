@@ -1,0 +1,23 @@
+.update-review-rating{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+}
+
+.update-review-container {
+    margin-top: 80px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.game-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 22px;
+}

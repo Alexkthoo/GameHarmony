@@ -2,17 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
+    margin: 0 auto; /* Center the container horizontally */
   }
 
   .test-123 {
     width: 100%;
-    max-width: 600px;
-    height: 200px; /* Set a fixed height for each game container */
+    max-width: 900px;
+    height: 204px; /* Set a fixed height for each game container */
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
   }
 
   .photo {
@@ -23,7 +27,20 @@
   }
 
   .game-details {
-    padding: 10px;
+    flex: 25%;
+  }
+
+  .game-desc{
+    flex: 50%;
+  }
+
+  .game-price{
+    display: flex;
+    flex: 25%;
+    justify-content: end;
+    margin-right: 40px;
+    align-items: center;
+    gap: 10px;
   }
 
   .game-title {
@@ -34,4 +51,21 @@
     width: 100%;
     text-decoration: none;
     color: #333;
+  }
+
+  .all-games-right-des {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left-img{
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .add-to-cart{
+    height: 40px;
+
   }

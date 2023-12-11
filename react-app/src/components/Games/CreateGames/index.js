@@ -23,7 +23,6 @@ function CreateGame() {
 
   const loginUser = useSelector((state) => state.session.user);
 
-
   useEffect(() => {
     yesSubmitted(false);
     setErrors({});
@@ -74,8 +73,6 @@ function CreateGame() {
     setImageLoading(true);
 
     dispatch(createGameThunk(formData)).then((res) => {
-
-
       setImageLoading(false);
 
       if (res && res.errors) {
@@ -95,7 +92,7 @@ function CreateGame() {
 
   return (
     <div className="create-game-main-div">
-      <h1>CREATE MI GAMEEEEEEEEEEE PLEASE</h1>
+      <h1>Create your Game here!</h1>
       <form
         className="create-game-form"
         onSubmit={handleSubmit}
@@ -123,7 +120,7 @@ function CreateGame() {
           <input
             className="create-game-input"
             type="number"
-            step="0.01"
+            step="1"
             placeholder="Price of Game"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
@@ -138,6 +135,7 @@ function CreateGame() {
         <div>
           <label className="label">Developer</label>
           <input
+            className="create-game-input"
             type="text"
             placeholder="Developer"
             value={developer}
@@ -154,6 +152,7 @@ function CreateGame() {
         <div>
           <label className="label">publisher</label>
           <input
+            className="create-game-input"
             type="text"
             placeholder="publisher"
             value={publisher}
@@ -170,6 +169,7 @@ function CreateGame() {
         <div>
           <label className="label">About Game</label>
           <input
+            className="create-game-input"
             type="text"
             placeholder="publisher"
             value={aboutGame}
@@ -191,7 +191,7 @@ function CreateGame() {
             placeholder="Description of game"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="description-field"
+            className="create-game-input-desc"
           />
 
           {errors.description && (

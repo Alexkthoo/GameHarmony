@@ -1,6 +1,7 @@
 .create-game-form {
     width: 500px;
     padding: 20px;
+
   }
 
   .create-button {
@@ -33,9 +34,14 @@
   }
 
   .create-game-input{
-    width: 100%;
+    width: 400px;
   }
 
   .create-test{
+    width: 400px;
+  }
+
+  .create-game-input-desc{
+    height: 100px;
     width: 400px;
   }

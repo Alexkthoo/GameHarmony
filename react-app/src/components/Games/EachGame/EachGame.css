@@ -25,12 +25,13 @@ body {
 
   .review-info {
     margin-top: 20px;
-    border: 3px dashed green;
+    border: 3px groove green;
   }
 
   .game-info {
     margin-top: 20px;
-    border: 3px dashed black;
+    border: 3px groove black;
+    height: 566px;
   }
 
   .each-review {
@@ -73,7 +74,53 @@ body {
     }
 
     .game-img {
-        width: 1000px;
-        height: 600px;
+        width: 600px;
+        height: 500px;
         object-fit: fill;
       }
+
+  .eg-game-title{
+    margin: 12px 0px;
+    font-size: 36px;
+  }
+
+  .eg-info-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .eg-game-info {
+    width: 73%;
+    margin-left: 10px;
+  }
+
+  .eg-game-info-img{
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+  }
+
+  .eg-game-about-about-info {
+    font-size: 20px;
+    margin-top: 9px;
+  }
+
+  .eg-game-rating{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .eg-game-developer{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .eg-game-publisher{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .each-game-container{
+    min-width: 1024px;
+
+  }

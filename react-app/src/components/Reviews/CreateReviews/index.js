@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getAllGamesThunk } from "../../../store/game";
 import { createGameReview } from "../../../store/review";
+import "./CreateReviews.css";
 
 function CreateGameReviewForm() {
   const { id } = useParams();
@@ -78,13 +79,15 @@ function CreateGameReviewForm() {
       >
         <div>
           <h1 className="h1Review">Add a Review</h1>
-          <label className="label">Rating</label>
-          <input
-            type="checkbox"
-            checked={Boolean(rating)}
-            onChange={(e) => setRating(e.target.checked)}
-            className="review-rating-input"
-          />
+          <div className="create-review-rating">
+            <label className="label">Did you enjoy {game.game_title}</label>
+            <input
+              type="checkbox"
+              checked={Boolean(rating)}
+              onChange={(e) => setRating(e.target.checked)}
+              className="review-rating-input"
+            />
+          </div>
 
           {errors.rating && (
             <p style={{ fontSize: "10px", color: "red" }}>
