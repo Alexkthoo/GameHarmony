@@ -14,15 +14,29 @@ function AllGames() {
 
   const allGames = Object.values(games);
 
+  const handleAddToCart = () => {
+    alert("Feature coming soon!");
+  };
+
   return (
     <div className="all-games-grid">
       {allGames.map((game) => (
         <NavLink key={game.id} to={`/games/${game.id}`} className="game-link">
           <div className="test-123">
-            <img src={game.img} alt="default game image" className="photo" />
-            <div className="game-details">
-              <div className="game-title">{game.game_title}</div>
-              <p className="game-description ellipsis-text"></p>
+            <div className="left-img">
+              <img src={game.img} alt="default game image" className="photo" />
+            </div>
+            <div className="all-games-right-des">
+              <div className="game-details">
+                <div className="game-title">{game.game_title}</div>
+              </div>
+              <div className="game-desc">{game.about_game}</div>
+              <div className="game-price">
+                ${game.price}
+                <button className="add-to-cart" onClick={handleAddToCart}>
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </NavLink>

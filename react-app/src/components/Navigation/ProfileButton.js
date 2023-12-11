@@ -46,8 +46,8 @@ function ProfileButton({ user }) {
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <div>{user.username}</div>
-            <div>{user.email}</div>
+            <div>Hello, {user.username}</div>
+            <div>Email: {user.email}</div>
             <div>
               <NavLink
                 id="hello-manage"

@@ -15,6 +15,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import CreateGameReviewForm from "./components/Reviews/CreateReviews";
 
 import UpdateGameReview from "./components/Reviews/UpdateReviews";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -60,6 +61,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      {/* <Footer /> */}
     </>
   );
 }

@@ -32,9 +32,7 @@ function SingleGame() {
     dispatch(getReviewThunks(id));
   }, [dispatch, id]);
 
-  useEffect(() => {
-
-  }, [reviews]);
+  useEffect(() => {}, [reviews]);
 
   const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
@@ -61,10 +59,17 @@ function SingleGame() {
   return (
     <div className="each-game-container">
       <div className="game-info">
-        <h1>{game.game_title}</h1>
-        <img className="game-img" src={game.img} />
+        <h1 className="eg-game-title">{game.game_title}</h1>
+        <div className="eg-info-container">
+          <img className="game-img" src={game.img} />
+          <div className="eg-game-info">
+            <div className="eg-game-about-about-info">{game.about_game}</div>
+            <div className="eg-game-rating">rating</div>
+            <div className="eg-game-developer">Developer: {game.developer}</div>
+            <div className="eg-game-publisher">Publisher: {game.publisher}</div>
+          </div>
+        </div>
 
-        <div></div>
         {gameOwner && (
           <div className="delete-box">
             <div>
