@@ -1,0 +1,16 @@
+.update-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-form>div>input {
+    width: 100%;
+}
+
+.update-games-description-field {
+    height: 100px;
+    width: 310px;
+
+}
