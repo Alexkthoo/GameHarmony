@@ -160,9 +160,119 @@ Game(
     about_game = "The game's lore is incredibly deep and complex, and it includes a multitude of different characters, races, classes, factions, and locations. The lore is so vast in fact, that Blizzard could never hope to tell the full story in a single installment, which is why they will never run out of material for WoW expansions.",
     description = "temp info for now",
     img = "https://blz-contentstack-images.akamaized.net/v3/assets/bltf408a0557f4e4998/blt49ecf5a649fbaf0c/6526c909c9cf4e07ce162d24/10.0_Dragonflight_BrowsingCard_960x540_enUS.jpg",
-    system_support = "PC",
+    system_support = "PC Master Race",
     user_id = 3
-    )
+    ),
+    Game(
+        game_title="Overwatch",
+        price=30,
+        developer="Blizzard Entertainment",
+        publisher="Blizzard Entertainment",
+        about_game="Overwatch is a team-based multiplayer first-person shooter game. Players choose from a diverse cast of heroes, each with unique abilities, and engage in fast-paced battles to achieve objectives.",
+        description="temp info for now",
+        img="https://waytoomany.games/wp-content/uploads/2022/10/overwatch-2-cover.jpg",
+        system_support="PC Master Race",
+        user_id=15
+    ),
+    Game(
+        game_title="Fortnite",
+        price=0,
+        developer="Epic Games",
+        publisher="Epic Games",
+        about_game="Fortnite is a popular battle royale game with a unique building mechanic. Players compete to be the last one standing in a constantly shrinking play area.",
+        description="temp info for now",
+        img="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/875/598/datas/original.jpg",
+        system_support="PC Master Race",
+        user_id=16
+    ),
+    Game(
+        game_title="Doom Eternal",
+        price=40,
+        developer="id Software",
+        publisher="Bethesda Softworks",
+        about_game="Doom Eternal is a first-person shooter that continues the iconic Doom series. Players battle demons from Hell with an arsenal of powerful weapons in intense and fast-paced combat.",
+        description="temp info for now",
+        img="https://assets.xboxservices.com/assets/34/0a/340ada26-49f7-48f1-a572-b27dd6ec766b.jpg?n=DOOM-Eternal_GLP-Page-Hero-0_1083x609_02.jpg",
+        system_support="PC Master Race",
+        user_id=17
+    ),
+    Game(
+        game_title="FIFA 22",
+        price=50,
+        developer="EA Vancouver",
+        publisher="Electronic Arts",
+        about_game="FIFA 22 is a football simulation game that brings realistic gameplay and updated features. It includes various game modes, including career mode and Ultimate Team.",
+        description="temp info for now",
+        img="https://cdn.wccftech.com/wp-content/uploads/2021/08/fifa-22.jpg",
+        system_support="PS5",
+        user_id=18
+    ),
+    Game(
+        game_title="Borderlands 3",
+        price=45,
+        developer="Gearbox Software",
+        publisher="2K Games",
+        about_game="Borderlands 3 is a first-person looter-shooter game with a focus on cooperative multiplayer. Players explore the planet of Pandora, completing missions and collecting loot.",
+        description="temp info for now",
+        img="https://cdn-ext.fanatical.com/production/product/1280x720/381d7788-ccc9-42e0-a237-00cd329b69eb.jpeg",
+        system_support="PC Master Race",
+        user_id=19
+    ),
+    Game(
+        game_title="Horizon Zero Dawn",
+        price=40,
+        developer="Guerrilla Games",
+        publisher="Sony Interactive Entertainment",
+        about_game="Horizon Zero Dawn is an action role-playing game set in a post-apocalyptic world. Players control Aloy, a hunter, in an open world filled with robotic creatures.",
+        description="temp info for now",
+        img="https://cdn1.epicgames.com/3328b08ac1c14540aa265a1a85c07839/offer/hzd_wide-2560x1440-bd312be05c49cf339097777c493cb899.jpg",
+        system_support="PS5",
+        user_id=20
+    ),
+    Game(
+        game_title="Mortal Kombat 11",
+        price=35,
+        developer="NetherRealm Studios",
+        publisher="Warner Bros. Interactive Entertainment",
+        about_game="Mortal Kombat 11 is a fighting game known for its brutal combat and iconic characters. Players engage in one-on-one battles and perform fatalities to defeat opponents.",
+        description="temp info for now",
+        img="https://image.api.playstation.com/vulcan/ap/rnd/202010/0822/4WzxHtmjXV1dQpWqj1B6UAMk.jpg",
+        system_support="PS5",
+        user_id=21
+    ),
+    Game(
+        game_title="NBA 2K22",
+        price=55,
+        developer="Visual Concepts",
+        publisher="2K Games",
+        about_game="NBA 2K22 is a basketball simulation game that offers realistic gameplay and updated features. It includes various game modes, such as MyCareer and MyTeam.",
+        description="temp info for now",
+        img="https://i.ytimg.com/vi/6aJo9ziVwKA/maxresdefault.jpg",
+        system_support="PS5",
+        user_id=22
+    ),
+    Game(
+        game_title="Monster Hunter: World",
+        price=50,
+        developer="Capcom",
+        publisher="Capcom",
+        about_game="Monster Hunter: World is an action role-playing game where players hunt and defeat various monsters. It features cooperative multiplayer and a living, breathing ecosystem.",
+        description="temp info for now",
+        img="https://www.trueachievements.com/customimages/075176.jpg",
+        system_support="PC Master Race",
+        user_id=23
+    ),
+    Game(
+        game_title="The Witcher 3: Wild Hunt",
+        price=35,
+        developer="CD Projekt",
+        publisher="CD Projekt",
+        about_game="The Witcher 3: Wild Hunt is an open-world action role-playing game. Players control Geralt of Rivia as he embarks on a quest in a vast fantasy world filled with monsters and political intrigue.",
+        description="temp info for now",
+        img="https://comiconverse.com/wp-content/uploads/2016/09/Witcher3title-1.jpg",
+        system_support="PS5",
+        user_id=24
+    ),
         ]
 
     db.session.add_all(games)

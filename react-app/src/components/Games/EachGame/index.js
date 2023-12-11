@@ -32,7 +32,7 @@ function SingleGame() {
     dispatch(getReviewThunks(id));
   }, [dispatch, id]);
 
-  useEffect(() => {}, [reviews]);
+  useEffect(() => { }, [reviews]);
 
   const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
@@ -64,7 +64,7 @@ function SingleGame() {
           <img className="game-img" src={game.img} />
           <div className="eg-game-info">
             <div className="eg-game-about-about-info">{game.about_game}</div>
-            <div className="eg-game-rating">rating</div>
+            {/* <div className="eg-game-rating">rating</div> */}
             <div className="eg-game-developer">Developer: {game.developer}</div>
             <div className="eg-game-publisher">Publisher: {game.publisher}</div>
           </div>
@@ -89,7 +89,7 @@ function SingleGame() {
             <div className="icon"></div>
             <div className="name">
               <p className="name-p">
-                USERNAME: {review.user?.username} said {review.description}
+                {review.user?.username.toUpperCase()} Wrote: {review.description}
               </p>
               <img className="review-img" src={review.img} />
               <div className="delete-review-button">
