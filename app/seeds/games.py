@@ -362,8 +362,7 @@ Game(
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=28
 ),
-]
-=======
+        
     Game(
         game_title="Overwatch",
         price=30,
