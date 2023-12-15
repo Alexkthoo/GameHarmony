@@ -276,7 +276,6 @@ Game(
     user_id=20
 ),
 
-
 Game(
     game_title="Cyber Connect 2",
     price=50,
@@ -298,7 +297,7 @@ Game(
     description="temp info for now",
     img="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Sekiro_Sword_Die_Twice_cover.png/220px-Sekiro_Sword_Die_Twice_cover.png",
     system_support="PC, Xbox, PlayStation",
-    user_id=23
+    user_id=2
 ),
 
 Game(
@@ -310,7 +309,7 @@ Game(
     description="temp info for now",
     img="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Among_Us_logo.png/220px-Among_Us_logo.png",
     system_support="PC, iOS, Android",
-    user_id=24
+    user_id=4
 ),
 
 Game(
@@ -322,7 +321,7 @@ Game(
     description="temp info for now",
     img="https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Celeste_cover_art.jpg/220px-Celeste_cover_art.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=25
+    user_id=5
 ),
 
 Game(
@@ -334,7 +333,7 @@ Game(
     description="temp info for now",
     img="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Persona_5_cover_art.jpg/220px-Persona_5_cover_art.jpg",
     system_support="PS4, PS5",
-    user_id=26
+    user_id=6
 ),
 
 Game(
@@ -346,7 +345,7 @@ Game(
     description="temp info for now",
     img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Hades_video_game_cover_art.jpg/220px-Hades_video_game_cover_art.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=27
+    user_id=2
 ),
 
 Game(
@@ -358,7 +357,7 @@ Game(
     description="temp info for now",
     img="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Stardew_Valley_cover.jpg/220px-Stardew_Valley_cover.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=28
+    user_id=8
 ),
 
     Game(
@@ -447,7 +446,7 @@ Game(
         description="temp info for now",
         img="https://i.ytimg.com/vi/6aJo9ziVwKA/maxresdefault.jpg",
         system_support="PS5",
-        user_id=22
+        user_id=4
     ),
     Game(
         game_title="Monster Hunter: World",
@@ -458,7 +457,7 @@ Game(
         description="temp info for now",
         img="https://www.trueachievements.com/customimages/075176.jpg",
         system_support="PC Master Race",
-        user_id=23
+        user_id=9
     ),
     Game(
         game_title="The Witcher 3: Wild Hunt",
@@ -469,7 +468,7 @@ Game(
         description="temp info for now",
         img="https://comiconverse.com/wp-content/uploads/2016/09/Witcher3title-1.jpg",
         system_support="PS5",
-        user_id=24
+        user_id=2
     ),
         ]
 
