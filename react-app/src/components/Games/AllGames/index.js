@@ -21,14 +21,17 @@ function AllGames() {
   return (
     <div className="all-games-grid">
       {allGames.map((game) => (
-        <NavLink key={game.id} to={`/games/${game.id}`} className="game-link">
+        <div key={game.id} className="game-container">
           <div className="test-123">
             <div className="left-img">
               <img src={game.img} alt="default game image" className="photo" />
             </div>
             <div className="all-games-right-des">
               <div className="game-details">
-                <div className="game-title">{game.game_title}</div>
+                {/* Wrap the NavLink around the game title */}
+                <NavLink to={`/games/${game.id}`} className="game-link">
+                  <div className="game-title">{game.game_title}</div>
+                </NavLink>
               </div>
               <div className="game-desc">{game.about_game}</div>
               <div className="game-price">
@@ -39,7 +42,7 @@ function AllGames() {
               </div>
             </div>
           </div>
-        </NavLink>
+        </div>
       ))}
     </div>
   );
