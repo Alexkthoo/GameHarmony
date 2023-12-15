@@ -166,313 +166,313 @@ Game(
 
 
 
-Game(
-    game_title="Minecraft",
-    price=30,
-    developer="Mojang Studios",
-    publisher="Mojang Studios",
-    about_game="Minecraft is a sandbox game that lets players build and explore blocky worlds. It offers endless creativity, survival challenges, and a thriving modding community.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Minecraft_logo.png/220px-Minecraft_logo.png",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=8
-),
+# Game(
+#     game_title="Minecraft",
+#     price=30,
+#     developer="Mojang Studios",
+#     publisher="Mojang Studios",
+#     about_game="Minecraft is a sandbox game that lets players build and explore blocky worlds. It offers endless creativity, survival challenges, and a thriving modding community.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Minecraft_logo.png/220px-Minecraft_logo.png",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=8
+# ),
 
 
-Game(
-    game_title="Animal Crossing: New Horizons",
-    price=50,
-    developer="Nintendo EPD",
-    publisher="Nintendo",
-    about_game="Animal Crossing: New Horizons is a life simulation game that lets players create their own island paradise. It's a relaxing and charming experience filled with adorable anthropomorphic animals.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Animal_Crossing_New_Horizons.jpg/220px-Animal_Crossing_New_Horizons.jpg",
-    system_support="Nintendo Switch",
-    user_id=10
-),
+# Game(
+#     game_title="Animal Crossing: New Horizons",
+#     price=50,
+#     developer="Nintendo EPD",
+#     publisher="Nintendo",
+#     about_game="Animal Crossing: New Horizons is a life simulation game that lets players create their own island paradise. It's a relaxing and charming experience filled with adorable anthropomorphic animals.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Animal_Crossing_New_Horizons.jpg/220px-Animal_Crossing_New_Horizons.jpg",
+#     system_support="Nintendo Switch",
+#     user_id=10
+# ),
 
-Game(
-    game_title="The Last of Us Part II",
-    price=55,
-    developer="Naughty Dog",
-    publisher="Sony Interactive Entertainment",
-    about_game="The Last of Us Part II is an action-adventure game that continues Ellie's story in a post-apocalyptic world. It explores themes of revenge and survival in a harsh environment.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/The_Last_of_Us_Part_II.jpg/220px-The_Last_of_Us_Part_II.jpg",
-    system_support="PS4, PS5",
-    user_id=11
-),
+# Game(
+#     game_title="The Last of Us Part II",
+#     price=55,
+#     developer="Naughty Dog",
+#     publisher="Sony Interactive Entertainment",
+#     about_game="The Last of Us Part II is an action-adventure game that continues Ellie's story in a post-apocalyptic world. It explores themes of revenge and survival in a harsh environment.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/The_Last_of_Us_Part_II.jpg/220px-The_Last_of_Us_Part_II.jpg",
+#     system_support="PS4, PS5",
+#     user_id=11
+# ),
 
-Game(
-    game_title="Hollow Knight",
-    price=20,
-    developer="Team Cherry",
-    publisher="Team Cherry",
-    about_game="Hollow Knight is a 2D action-platformer set in a beautifully hand-drawn underground world. Players explore, battle creatures, and uncover mysteries in this atmospheric adventure.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Hollow_Knight_cover_art.jpg/220px-Hollow_Knight_cover_art.jpg",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=12
-),
-
-
-
-Game(
-    game_title="Resident Evil Village",
-    price=50,
-    developer="Capcom",
-    publisher="Capcom",
-    about_game="Resident Evil Village is a survival horror game that follows Ethan Winters as he explores a mysterious village filled with grotesque creatures. It continues the story of Resident Evil 7.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Resident_Evil_Village_Cover_Art.jpg/220px-Resident_Evil_Village_Cover_Art.jpg",
-    system_support="PC, Xbox, PlayStation",
-    user_id=15
-),
-
-Game(
-    game_title="Death Stranding",
-    price=45,
-    developer="Kojima Productions",
-    publisher="Sony Interactive Entertainment",
-    about_game="Death Stranding is an action-adventure game that explores themes of isolation and connection in a post-apocalyptic world. Players traverse a vast, haunting landscape as Sam Porter Bridges.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Death_Stranding.jpg/220px-Death_Stranding.jpg",
-    system_support="PC, PS4, PS5",
-    user_id=16
-),
+# Game(
+#     game_title="Hollow Knight",
+#     price=20,
+#     developer="Team Cherry",
+#     publisher="Team Cherry",
+#     about_game="Hollow Knight is a 2D action-platformer set in a beautifully hand-drawn underground world. Players explore, battle creatures, and uncover mysteries in this atmospheric adventure.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Hollow_Knight_cover_art.jpg/220px-Hollow_Knight_cover_art.jpg",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=12
+# ),
 
 
-Game(
-    game_title="Cyber Shadow",
-    price=20,
-    developer="Mechanical Head Studios",
-    publisher="Yacht Club Games",
-    about_game="Cyber Shadow is a 2D action-platformer that pays homage to classic ninja games. Players control Shadow, a cybernetic ninja, on a mission to save his clan from a mechanical threat.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Cyber_Shadow_Cover_Art.jpg/220px-Cyber_Shadow_Cover_Art.jpg",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=18
-),
 
-Game(
-    game_title="Genshin Impact",
-    price=0,
-    developer="miHoYo",
-    publisher="miHoYo",
-    about_game="Genshin Impact is an open-world action RPG with gacha elements. Players travel the fantasy world of Teyvat, collect characters with unique abilities, and uncover the mysteries of the land.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Genshin_Impact_cover_art.jpg/220px-Genshin_Impact_cover_art.jpg",
-    system_support="PC, PS4, PS5, iOS, Android",
-    user_id=19
-),
+# Game(
+#     game_title="Resident Evil Village",
+#     price=50,
+#     developer="Capcom",
+#     publisher="Capcom",
+#     about_game="Resident Evil Village is a survival horror game that follows Ethan Winters as he explores a mysterious village filled with grotesque creatures. It continues the story of Resident Evil 7.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Resident_Evil_Village_Cover_Art.jpg/220px-Resident_Evil_Village_Cover_Art.jpg",
+#     system_support="PC, Xbox, PlayStation",
+#     user_id=15
+# ),
 
-Game(
-    game_title="Dark Souls III",
-    price=30,
-    developer="FromSoftware",
-    publisher="Bandai Namco Entertainment",
-    about_game="Dark Souls III is an action RPG known for its challenging gameplay. Players journey through a dark and desolate world, facing formidable bosses and uncovering the lore of the series.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Dark_Souls_III.jpg/220px-Dark_Souls_III.jpg",
-    system_support="PC, Xbox, PlayStation",
-    user_id=20
-),
+# Game(
+#     game_title="Death Stranding",
+#     price=45,
+#     developer="Kojima Productions",
+#     publisher="Sony Interactive Entertainment",
+#     about_game="Death Stranding is an action-adventure game that explores themes of isolation and connection in a post-apocalyptic world. Players traverse a vast, haunting landscape as Sam Porter Bridges.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Death_Stranding.jpg/220px-Death_Stranding.jpg",
+#     system_support="PC, PS4, PS5",
+#     user_id=16
+# ),
 
 
-Game(
-    game_title="Cyber Connect 2",
-    price=50,
-    developer="CyberConnect2",
-    publisher="CyberConnect2",
-    about_game="Cyber Connect 2 is an action RPG that follows a group of hackers in a virtual world. Players explore the digital landscape, solve puzzles, and uncover the secrets of cyberspace.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/CyberConnect2_Logo.png/220px-CyberConnect2_Logo.png",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=22
-),
+# Game(
+#     game_title="Cyber Shadow",
+#     price=20,
+#     developer="Mechanical Head Studios",
+#     publisher="Yacht Club Games",
+#     about_game="Cyber Shadow is a 2D action-platformer that pays homage to classic ninja games. Players control Shadow, a cybernetic ninja, on a mission to save his clan from a mechanical threat.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Cyber_Shadow_Cover_Art.jpg/220px-Cyber_Shadow_Cover_Art.jpg",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=18
+# ),
 
-Game(
-    game_title="Sekiro: Shadows Die Twice",
-    price=50,
-    developer="FromSoftware",
-    publisher="Activision",
-    about_game="Sekiro: Shadows Die Twice is an action-adventure game set in feudal Japan. Players control a shinobi named Wolf as he embarks on a mission of revenge and redemption.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Sekiro_Sword_Die_Twice_cover.png/220px-Sekiro_Sword_Die_Twice_cover.png",
-    system_support="PC, Xbox, PlayStation",
-    user_id=23
-),
+# Game(
+#     game_title="Genshin Impact",
+#     price=0,
+#     developer="miHoYo",
+#     publisher="miHoYo",
+#     about_game="Genshin Impact is an open-world action RPG with gacha elements. Players travel the fantasy world of Teyvat, collect characters with unique abilities, and uncover the mysteries of the land.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Genshin_Impact_cover_art.jpg/220px-Genshin_Impact_cover_art.jpg",
+#     system_support="PC, PS4, PS5, iOS, Android",
+#     user_id=19
+# ),
 
-Game(
-    game_title="Among Us",
-    price=5,
-    developer="Innersloth",
-    publisher="Innersloth",
-    about_game="Among Us is a multiplayer party game where players work together on a spaceship but some are impostors trying to sabotage the mission. Deduction and teamwork are key.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Among_Us_logo.png/220px-Among_Us_logo.png",
-    system_support="PC, iOS, Android",
-    user_id=24
-),
+# Game(
+#     game_title="Dark Souls III",
+#     price=30,
+#     developer="FromSoftware",
+#     publisher="Bandai Namco Entertainment",
+#     about_game="Dark Souls III is an action RPG known for its challenging gameplay. Players journey through a dark and desolate world, facing formidable bosses and uncovering the lore of the series.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Dark_Souls_III.jpg/220px-Dark_Souls_III.jpg",
+#     system_support="PC, Xbox, PlayStation",
+#     user_id=20
+# ),
 
-Game(
-    game_title="Celeste",
-    price=15,
-    developer="Maddy Makes Games",
-    publisher="Maddy Makes Games",
-    about_game="Celeste is a challenging 2D platformer that tells the story of Madeline's journey up the titular mountain. It explores themes of mental health and determination.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Celeste_cover_art.jpg/220px-Celeste_cover_art.jpg",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=25
-),
 
-Game(
-    game_title="Persona 5",
-    price=40,
-    developer="Atlus",
-    publisher="Atlus",
-    about_game="Persona 5 is a Japanese RPG that follows a group of high school students who lead double lives as phantom thieves. They use their Personas to change the hearts of corrupt adults.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Persona_5_cover_art.jpg/220px-Persona_5_cover_art.jpg",
-    system_support="PS4, PS5",
-    user_id=26
-),
+# Game(
+#     game_title="Cyber Connect 2",
+#     price=50,
+#     developer="CyberConnect2",
+#     publisher="CyberConnect2",
+#     about_game="Cyber Connect 2 is an action RPG that follows a group of hackers in a virtual world. Players explore the digital landscape, solve puzzles, and uncover the secrets of cyberspace.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/CyberConnect2_Logo.png/220px-CyberConnect2_Logo.png",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=22
+# ),
 
-Game(
-    game_title="Hades",
-    price=25,
-    developer="Supergiant Games",
-    publisher="Supergiant Games",
-    about_game="Hades is an action roguelike where players control Zagreus, the son of Hades, as he attempts to escape the Underworld. Each run is unique with various weapons and abilities.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Hades_video_game_cover_art.jpg/220px-Hades_video_game_cover_art.jpg",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=27
-),
+# Game(
+#     game_title="Sekiro: Shadows Die Twice",
+#     price=50,
+#     developer="FromSoftware",
+#     publisher="Activision",
+#     about_game="Sekiro: Shadows Die Twice is an action-adventure game set in feudal Japan. Players control a shinobi named Wolf as he embarks on a mission of revenge and redemption.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Sekiro_Sword_Die_Twice_cover.png/220px-Sekiro_Sword_Die_Twice_cover.png",
+#     system_support="PC, Xbox, PlayStation",
+#     user_id=23
+# ),
 
-Game(
-    game_title="Stardew Valley",
-    price=15,
-    developer="ConcernedApe",
-    publisher="ConcernedApe",
-    about_game="Stardew Valley is a farming simulation game that lets players build and manage their own farm. It offers a peaceful and charming rural life experience.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Stardew_Valley_cover.jpg/220px-Stardew_Valley_cover.jpg",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=28
-),
-        
-    Game(
-        game_title="Overwatch",
-        price=30,
-        developer="Blizzard Entertainment",
-        publisher="Blizzard Entertainment",
-        about_game="Overwatch is a team-based multiplayer first-person shooter game. Players choose from a diverse cast of heroes, each with unique abilities, and engage in fast-paced battles to achieve objectives.",
-        description="temp info for now",
-        img="https://waytoomany.games/wp-content/uploads/2022/10/overwatch-2-cover.jpg",
-        system_support="PC Master Race",
-        user_id=15
-    ),
-    Game(
-        game_title="Fortnite",
-        price=0,
-        developer="Epic Games",
-        publisher="Epic Games",
-        about_game="Fortnite is a popular battle royale game with a unique building mechanic. Players compete to be the last one standing in a constantly shrinking play area.",
-        description="temp info for now",
-        img="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/875/598/datas/original.jpg",
-        system_support="PC Master Race",
-        user_id=16
-    ),
-    Game(
-        game_title="Doom Eternal",
-        price=40,
-        developer="id Software",
-        publisher="Bethesda Softworks",
-        about_game="Doom Eternal is a first-person shooter that continues the iconic Doom series. Players battle demons from Hell with an arsenal of powerful weapons in intense and fast-paced combat.",
-        description="temp info for now",
-        img="https://assets.xboxservices.com/assets/34/0a/340ada26-49f7-48f1-a572-b27dd6ec766b.jpg?n=DOOM-Eternal_GLP-Page-Hero-0_1083x609_02.jpg",
-        system_support="PC Master Race",
-        user_id=17
-    ),
-    Game(
-        game_title="FIFA 22",
-        price=50,
-        developer="EA Vancouver",
-        publisher="Electronic Arts",
-        about_game="FIFA 22 is a football simulation game that brings realistic gameplay and updated features. It includes various game modes, including career mode and Ultimate Team.",
-        description="temp info for now",
-        img="https://cdn.wccftech.com/wp-content/uploads/2021/08/fifa-22.jpg",
-        system_support="PS5",
-        user_id=18
-    ),
-    Game(
-        game_title="Borderlands 3",
-        price=45,
-        developer="Gearbox Software",
-        publisher="2K Games",
-        about_game="Borderlands 3 is a first-person looter-shooter game with a focus on cooperative multiplayer. Players explore the planet of Pandora, completing missions and collecting loot.",
-        description="temp info for now",
-        img="https://cdn-ext.fanatical.com/production/product/1280x720/381d7788-ccc9-42e0-a237-00cd329b69eb.jpeg",
-        system_support="PC Master Race",
-        user_id=19
-    ),
-    Game(
-        game_title="Horizon Zero Dawn",
-        price=40,
-        developer="Guerrilla Games",
-        publisher="Sony Interactive Entertainment",
-        about_game="Horizon Zero Dawn is an action role-playing game set in a post-apocalyptic world. Players control Aloy, a hunter, in an open world filled with robotic creatures.",
-        description="temp info for now",
-        img="https://cdn1.epicgames.com/3328b08ac1c14540aa265a1a85c07839/offer/hzd_wide-2560x1440-bd312be05c49cf339097777c493cb899.jpg",
-        system_support="PS5",
-        user_id=20
-    ),
-    Game(
-        game_title="Mortal Kombat 11",
-        price=35,
-        developer="NetherRealm Studios",
-        publisher="Warner Bros. Interactive Entertainment",
-        about_game="Mortal Kombat 11 is a fighting game known for its brutal combat and iconic characters. Players engage in one-on-one battles and perform fatalities to defeat opponents.",
-        description="temp info for now",
-        img="https://image.api.playstation.com/vulcan/ap/rnd/202010/0822/4WzxHtmjXV1dQpWqj1B6UAMk.jpg",
-        system_support="PS5",
-        user_id=21
-    ),
-    Game(
-        game_title="NBA 2K22",
-        price=55,
-        developer="Visual Concepts",
-        publisher="2K Games",
-        about_game="NBA 2K22 is a basketball simulation game that offers realistic gameplay and updated features. It includes various game modes, such as MyCareer and MyTeam.",
-        description="temp info for now",
-        img="https://i.ytimg.com/vi/6aJo9ziVwKA/maxresdefault.jpg",
-        system_support="PS5",
-        user_id=22
-    ),
-    Game(
-        game_title="Monster Hunter: World",
-        price=50,
-        developer="Capcom",
-        publisher="Capcom",
-        about_game="Monster Hunter: World is an action role-playing game where players hunt and defeat various monsters. It features cooperative multiplayer and a living, breathing ecosystem.",
-        description="temp info for now",
-        img="https://www.trueachievements.com/customimages/075176.jpg",
-        system_support="PC Master Race",
-        user_id=23
-    ),
-    Game(
-        game_title="The Witcher 3: Wild Hunt",
-        price=35,
-        developer="CD Projekt",
-        publisher="CD Projekt",
-        about_game="The Witcher 3: Wild Hunt is an open-world action role-playing game. Players control Geralt of Rivia as he embarks on a quest in a vast fantasy world filled with monsters and political intrigue.",
-        description="temp info for now",
-        img="https://comiconverse.com/wp-content/uploads/2016/09/Witcher3title-1.jpg",
-        system_support="PS5",
-        user_id=24
-    ),
+# Game(
+#     game_title="Among Us",
+#     price=5,
+#     developer="Innersloth",
+#     publisher="Innersloth",
+#     about_game="Among Us is a multiplayer party game where players work together on a spaceship but some are impostors trying to sabotage the mission. Deduction and teamwork are key.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Among_Us_logo.png/220px-Among_Us_logo.png",
+#     system_support="PC, iOS, Android",
+#     user_id=24
+# ),
+
+# Game(
+#     game_title="Celeste",
+#     price=15,
+#     developer="Maddy Makes Games",
+#     publisher="Maddy Makes Games",
+#     about_game="Celeste is a challenging 2D platformer that tells the story of Madeline's journey up the titular mountain. It explores themes of mental health and determination.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Celeste_cover_art.jpg/220px-Celeste_cover_art.jpg",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=25
+# ),
+
+# Game(
+#     game_title="Persona 5",
+#     price=40,
+#     developer="Atlus",
+#     publisher="Atlus",
+#     about_game="Persona 5 is a Japanese RPG that follows a group of high school students who lead double lives as phantom thieves. They use their Personas to change the hearts of corrupt adults.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Persona_5_cover_art.jpg/220px-Persona_5_cover_art.jpg",
+#     system_support="PS4, PS5",
+#     user_id=26
+# ),
+
+# Game(
+#     game_title="Hades",
+#     price=25,
+#     developer="Supergiant Games",
+#     publisher="Supergiant Games",
+#     about_game="Hades is an action roguelike where players control Zagreus, the son of Hades, as he attempts to escape the Underworld. Each run is unique with various weapons and abilities.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Hades_video_game_cover_art.jpg/220px-Hades_video_game_cover_art.jpg",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=27
+# ),
+
+# Game(
+#     game_title="Stardew Valley",
+#     price=15,
+#     developer="ConcernedApe",
+#     publisher="ConcernedApe",
+#     about_game="Stardew Valley is a farming simulation game that lets players build and manage their own farm. It offers a peaceful and charming rural life experience.",
+#     description="temp info for now",
+#     img="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Stardew_Valley_cover.jpg/220px-Stardew_Valley_cover.jpg",
+#     system_support="PC, Xbox, PlayStation, Nintendo Switch",
+#     user_id=28
+# ),
+
+#     Game(
+#         game_title="Overwatch",
+#         price=30,
+#         developer="Blizzard Entertainment",
+#         publisher="Blizzard Entertainment",
+#         about_game="Overwatch is a team-based multiplayer first-person shooter game. Players choose from a diverse cast of heroes, each with unique abilities, and engage in fast-paced battles to achieve objectives.",
+#         description="temp info for now",
+#         img="https://waytoomany.games/wp-content/uploads/2022/10/overwatch-2-cover.jpg",
+#         system_support="PC Master Race",
+#         user_id=15
+#     ),
+#     Game(
+#         game_title="Fortnite",
+#         price=0,
+#         developer="Epic Games",
+#         publisher="Epic Games",
+#         about_game="Fortnite is a popular battle royale game with a unique building mechanic. Players compete to be the last one standing in a constantly shrinking play area.",
+#         description="temp info for now",
+#         img="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/001/875/598/datas/original.jpg",
+#         system_support="PC Master Race",
+#         user_id=16
+#     ),
+#     Game(
+#         game_title="Doom Eternal",
+#         price=40,
+#         developer="id Software",
+#         publisher="Bethesda Softworks",
+#         about_game="Doom Eternal is a first-person shooter that continues the iconic Doom series. Players battle demons from Hell with an arsenal of powerful weapons in intense and fast-paced combat.",
+#         description="temp info for now",
+#         img="https://assets.xboxservices.com/assets/34/0a/340ada26-49f7-48f1-a572-b27dd6ec766b.jpg?n=DOOM-Eternal_GLP-Page-Hero-0_1083x609_02.jpg",
+#         system_support="PC Master Race",
+#         user_id=17
+#     ),
+#     Game(
+#         game_title="FIFA 22",
+#         price=50,
+#         developer="EA Vancouver",
+#         publisher="Electronic Arts",
+#         about_game="FIFA 22 is a football simulation game that brings realistic gameplay and updated features. It includes various game modes, including career mode and Ultimate Team.",
+#         description="temp info for now",
+#         img="https://cdn.wccftech.com/wp-content/uploads/2021/08/fifa-22.jpg",
+#         system_support="PS5",
+#         user_id=18
+#     ),
+#     Game(
+#         game_title="Borderlands 3",
+#         price=45,
+#         developer="Gearbox Software",
+#         publisher="2K Games",
+#         about_game="Borderlands 3 is a first-person looter-shooter game with a focus on cooperative multiplayer. Players explore the planet of Pandora, completing missions and collecting loot.",
+#         description="temp info for now",
+#         img="https://cdn-ext.fanatical.com/production/product/1280x720/381d7788-ccc9-42e0-a237-00cd329b69eb.jpeg",
+#         system_support="PC Master Race",
+#         user_id=19
+#     ),
+#     Game(
+#         game_title="Horizon Zero Dawn",
+#         price=40,
+#         developer="Guerrilla Games",
+#         publisher="Sony Interactive Entertainment",
+#         about_game="Horizon Zero Dawn is an action role-playing game set in a post-apocalyptic world. Players control Aloy, a hunter, in an open world filled with robotic creatures.",
+#         description="temp info for now",
+#         img="https://cdn1.epicgames.com/3328b08ac1c14540aa265a1a85c07839/offer/hzd_wide-2560x1440-bd312be05c49cf339097777c493cb899.jpg",
+#         system_support="PS5",
+#         user_id=20
+#     ),
+#     Game(
+#         game_title="Mortal Kombat 11",
+#         price=35,
+#         developer="NetherRealm Studios",
+#         publisher="Warner Bros. Interactive Entertainment",
+#         about_game="Mortal Kombat 11 is a fighting game known for its brutal combat and iconic characters. Players engage in one-on-one battles and perform fatalities to defeat opponents.",
+#         description="temp info for now",
+#         img="https://image.api.playstation.com/vulcan/ap/rnd/202010/0822/4WzxHtmjXV1dQpWqj1B6UAMk.jpg",
+#         system_support="PS5",
+#         user_id=21
+#     ),
+#     Game(
+#         game_title="NBA 2K22",
+#         price=55,
+#         developer="Visual Concepts",
+#         publisher="2K Games",
+#         about_game="NBA 2K22 is a basketball simulation game that offers realistic gameplay and updated features. It includes various game modes, such as MyCareer and MyTeam.",
+#         description="temp info for now",
+#         img="https://i.ytimg.com/vi/6aJo9ziVwKA/maxresdefault.jpg",
+#         system_support="PS5",
+#         user_id=22
+#     ),
+#     Game(
+#         game_title="Monster Hunter: World",
+#         price=50,
+#         developer="Capcom",
+#         publisher="Capcom",
+#         about_game="Monster Hunter: World is an action role-playing game where players hunt and defeat various monsters. It features cooperative multiplayer and a living, breathing ecosystem.",
+#         description="temp info for now",
+#         img="https://www.trueachievements.com/customimages/075176.jpg",
+#         system_support="PC Master Race",
+#         user_id=23
+#     ),
+#     Game(
+#         game_title="The Witcher 3: Wild Hunt",
+#         price=35,
+#         developer="CD Projekt",
+#         publisher="CD Projekt",
+#         about_game="The Witcher 3: Wild Hunt is an open-world action role-playing game. Players control Geralt of Rivia as he embarks on a quest in a vast fantasy world filled with monsters and political intrigue.",
+#         description="temp info for now",
+#         img="https://comiconverse.com/wp-content/uploads/2016/09/Witcher3title-1.jpg",
+#         system_support="PS5",
+#         user_id=24
+#     ),
         ]
 
 
