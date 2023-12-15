@@ -1,126 +1,131 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-  }
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
 
-  .container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-
-
-  .delete-box {
-    margin-top: 20px;
-  }
-
-  .delete-game {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #fff;
-  }
-
-  .review-info {
-    margin-top: 20px;
-    border: 3px groove green;
-  }
-
-  .game-info {
-    margin-top: 20px;
-    border: 3px groove black;
-    height: 566px;
-  }
-
-  .each-review {
-      margin-bottom: 20px;
-    }
-
-    .name-p {
-        font-weight: bold;
-    }
-
-    .review-img1.with-img {
-        margin-top: 10px;
-    }
-
-    .delete-review-button button {
-        margin-right: 10px;
-        margin-top: 10px;
-        padding: 8px 12px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-
-    }
-
-    .review-info > button {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 
-    .review-img {
-    max-width: 20%;
-    height: auto;
-    margin-top: 10px;
-    }
 
-    .game-img {
-        width: 600px;
-        height: 500px;
-        object-fit: fill;
-      }
+.delete-box {
+  margin-top: 20px;
+}
 
-  .eg-game-title{
-    margin: 12px 0px;
-    font-size: 36px;
-  }
+.delete-game {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+}
 
-  .eg-info-container {
-    display: flex;
-    flex-direction: row;
-  }
+.review-info {
+  margin-top: 20px;
 
-  .eg-game-info {
-    width: 73%;
-    margin-left: 10px;
-  }
+}
 
-  .eg-game-info-img{
-    height: 300px;
-    width: 400px;
-    object-fit: contain;
-  }
+.game-info {
+  margin-top: 20px;
+  border: 3px groove black;
+  height: 566px;
+}
 
-  .eg-game-about-about-info {
-    font-size: 20px;
-    margin-top: 9px;
-  }
+.each-review {
+  margin-bottom: 20px;
+}
 
-  .eg-game-rating{
-    font-size: 20px;
-    margin-top: 20px;
-  }
+.name-p {
+  font-weight: bold;
+}
 
-  .eg-game-developer{
-    font-size: 20px;
-    margin-top: 20px;
-  }
+.review-img1.with-img {
+  margin-top: 10px;
+}
 
-  .eg-game-publisher{
-    font-size: 20px;
-    margin-top: 20px;
-  }
+.delete-review-button>button {
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 
-  .each-game-container{
-    min-width: 1024px;
+}
 
-  }
+.review-info>button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
+.review-img {
+  max-width: 20%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.game-img {
+  width: 600px;
+  height: 500px;
+  object-fit: fill;
+}
+
+.eg-game-title {
+  margin: 12px 0px;
+  font-size: 36px;
+}
+
+.eg-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.eg-game-info {
+  width: 73%;
+  margin-left: 10px;
+}
+
+.eg-game-info-img {
+  height: 300px;
+  width: 400px;
+  object-fit: contain;
+}
+
+.eg-game-about-about-info {
+  font-size: 20px;
+  margin-top: 9px;
+}
+
+.eg-game-rating {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.eg-game-developer {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.eg-game-publisher {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.each-game-container {
+  min-width: 1024px;
+
+}
+
+.name {
+  border: 1px groove black;
+  padding-bottom: 10px;
+}

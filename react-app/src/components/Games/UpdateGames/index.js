@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOneGameThunk, updateGameThunk } from "../../../store/game";
 import { useHistory } from "react-router-dom";
+import "./UpdateGames.css"
 
 const UpdateGame = () => {
   const { id } = useParams();
@@ -80,7 +81,7 @@ const UpdateGame = () => {
   };
 
   return (
-    <>
+    <div className="update-game-container">
       <h1>testing update shit 123</h1>
       <div>
         <form className="game-form" onSubmit={handleSubmit}>
@@ -173,7 +174,7 @@ const UpdateGame = () => {
               placeholder="Description of Game"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="description-field"
+              className="update-games-description-field"
             />
 
             {errors.description && (
@@ -212,7 +213,7 @@ const UpdateGame = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
