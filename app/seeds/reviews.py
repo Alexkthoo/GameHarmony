@@ -8,7 +8,7 @@ import random
 def seed_reviews():
     fake = Faker()
 
-    for _ in range(50):  # Change this number if you want to create more reviews
+    for _ in range(100):  # Change this number if you want to create more reviews
         review = Review(
             rating=random.choice([True, False]),  # Random True or False
             description=fake.text(),  # Generate a random description

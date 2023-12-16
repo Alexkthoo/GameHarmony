@@ -73,7 +73,6 @@ export const createGameThunk = (formData) => async (dispatch) => {
       body: formData,
     });
 
-
     if (res.ok) {
       const { game } = await res.json();
       dispatch(createGame(game));
@@ -130,7 +129,7 @@ export const deleteGameThunk = (id) => async (dispatch) => {
 
 //initial state
 const initialState = {
-  allGames: {},
+  allGames: [],
 };
 
 //reducer

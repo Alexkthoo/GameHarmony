@@ -12,15 +12,17 @@ body {
 }
 
 
+.delete-game {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.delete-box {
-  margin-top: 20px;
+  background-color: #f2f2f2;
+  margin-left: 25px;
 }
 
-.delete-game {
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #fff;
+#delete-game {
+  margin-left: 10px;
 }
 
 .review-info {
@@ -128,4 +130,11 @@ body {
 .name {
   border: 1px groove black;
   padding-bottom: 10px;
+}
+
+.game-title-delete-update{
+  display: flex;
+
+  align-items: center;
+
 }
