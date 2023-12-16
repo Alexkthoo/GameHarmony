@@ -14,7 +14,7 @@ def seed_reviews():
             description=fake.text(),  # Generate a random description
             created_at=date.today(),
             user_id=random.randint(1, 24),  # Random user_id between 1 and 24
-            game_id=random.randint(1, 40),  # Random game_id between 1 and 40
+            game_id=random.randint(1, 39),  # Random game_id between 1 and 40
         )
 
         db.session.add(review)
