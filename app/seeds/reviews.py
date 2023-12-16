@@ -2,37 +2,23 @@ from app.models import db, environment, SCHEMA, Game, Review
 from sqlalchemy.sql import text
 from faker import Faker
 from datetime import date
+import random
 
-# faker = Faker()
 
 def seed_reviews():
-    review1 = Review(
-    rating = True,
-    description = "Great game would play again",
-    created_at = date.today(),
-    user_id = 2,
-    game_id = 1
-    )
+    fake = Faker()
 
-    review2 = Review(
-    rating = False,
-    description = "THIS IS A VERY VERY BORRRRRRRRRRRRRRING GAME",
-    created_at = date.today(),
-    user_id = 2,
-    game_id = 3
-    )
+    for _ in range(50):  # Change this number if you want to create more reviews
+        review = Review(
+            rating=random.choice([True, False]),  # Random True or False
+            description=fake.text(),  # Generate a random description
+            created_at=date.today(),
+            user_id=random.randint(1, 24),  # Random user_id between 1 and 24
+            game_id=random.randint(1, 40),  # Random game_id between 1 and 40
+        )
 
-    review3 = Review(
-    rating = False,
-    description = "It is fun whenever they release a new season/expansion. In between each season can be long and boring",
-    created_at = date.today(),
-    user_id = 3,
-    game_id = 1
-    )
+        db.session.add(review)
 
-    db.session.add(review1)
-    db.session.add(review2)
-    db.session.add(review3)
     db.session.commit()
 
 
