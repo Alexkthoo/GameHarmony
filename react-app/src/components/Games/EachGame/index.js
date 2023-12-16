@@ -32,7 +32,7 @@ function SingleGame() {
     dispatch(getReviewThunks(id));
   }, [dispatch, id]);
 
-  useEffect(() => { }, [reviews]);
+  useEffect(() => {}, [reviews]);
 
   const handleGameUpdate = () => {
     history.push(`/games/${id}/update`);
@@ -59,7 +59,18 @@ function SingleGame() {
   return (
     <div className="each-game-container">
       <div className="game-info">
-        <h1 className="eg-game-title">{game.game_title}</h1>
+        <div className="game-title-delete-update">
+          <h1 className="eg-game-title">{game.game_title}</h1>
+          {gameOwner && (
+            <div className="delete-box">
+              <div className="delete-game">
+                <button onClick={handleGameUpdate}>Update Game</button>
+
+                <DeleteGame gameId={id} />
+              </div>
+            </div>
+          )}
+        </div>
         <div className="eg-info-container">
           <img className="game-img" src={game.img} />
           <div className="eg-game-info">
@@ -69,48 +80,25 @@ function SingleGame() {
             <div className="eg-game-publisher">Publisher: {game.publisher}</div>
           </div>
         </div>
-
-        {gameOwner && (
-          <div className="delete-box">
-            <div>
-              <div className="delete-game">
-                <h1>Update Game</h1>
-                <button onClick={handleGameUpdate}>Update Game</button>
-                <h1>Delete Game</h1>
-                <DeleteGame gameId={id} />
+        <div className="review-delete-update-container"></div>
+        <div className="review-info">
+          {Object.values(reviews).map((review, index) => (
+            <div className="each-review" key={index}>
+              <div className="icon"></div>
+              <div className="name">
+                <p className="name-p">
+                  {review.user?.username.toUpperCase()} Wrote:{" "}
+                  {review.description}
+                </p>
+                <img className="review-img" src={review.img} />
               </div>
             </div>
-          </div>
-        )}
-      </div>
-      <div className="review-info">
-        {Object.values(reviews).map((review, index) => (
-          <div className="each-review" key={index}>
-            <div className="icon"></div>
-            <div className="name">
-              <p className="name-p">
-                {review.user?.username.toUpperCase()} Wrote: {review.description}
-              </p>
-              <img className="review-img" src={review.img} />
-              <div className="delete-review-button">
-                {user && user.id === review.user?.id && (
-                  <>
-                    <button onClick={() => handleDeleteReview(review.id)}>
-                      Delete Review
-                    </button>
-                    <button onClick={() => handleUpdateReview(review.id)}>
-                      Update Review
-                    </button>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
-        {!gameOwner && user && !userHasReviewed && (
-          // <button onClick={handleReviewClick}>Add Review</button>
-          <CreateGameReviewForm />
-        )}
+          ))}
+          {!gameOwner && user && !userHasReviewed && (
+            // <button onClick={handleReviewClick}>Add Review</button>
+            <CreateGameReviewForm />
+          )}
+        </div>
       </div>
     </div>
   );

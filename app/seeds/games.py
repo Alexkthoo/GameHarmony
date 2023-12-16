@@ -14,7 +14,7 @@ def seed_games():
     publisher="Sony Interactive Entertainment",
     about_game="God of War II continues the story of Kratos as he seeks revenge on the gods of Olympus. With new weapons and abilities, Kratos must face powerful foes and overcome challenging puzzles in this epic action-adventure game.",
     description="temp info for now",
-    img="https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_2/ps2_godofwar2_eu_thumb.jpg",
+    img="https://i.ytimg.com/vi/QAjwSDecOrU/maxresdefault.jpg",
     system_support="PS5",
     user_id=2
 ),
@@ -32,13 +32,13 @@ Game(
 ),
 
 Game(
-    game_title="Cyberpunk 2078",
+    game_title="Cyberpunk 2077",
     price=65,
     developer="CD Projekt",
     publisher="CD Projekt",
-    about_game="Cyberpunk 2078 takes the immersive open-world experience to new heights. Set in a dystopian future, players navigate the bustling city of Night City, encountering cyber-enhanced characters and engaging in gripping narrative-driven quests.",
+    about_game="Cyberpunk 2077 takes the immersive open-world experience to new heights. Set in a dystopian future, players navigate the bustling city of Night City, encountering cyber-enhanced characters and engaging in gripping narrative-driven quests.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg",
+    img="https://static.cdprojektred.com/cms.cdprojektred.com/16x9_big/b9ea2dc46d95cf9fa3f77209e27ae7a6488368f1-1280x720.jpg",
     system_support="PC, PS5, Xbox Series X/S",
     user_id=4
 ),
@@ -171,7 +171,7 @@ Game(
     publisher="Mojang Studios",
     about_game="Minecraft is a sandbox game that lets players build and explore blocky worlds. It offers endless creativity, survival challenges, and a thriving modding community.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Minecraft_logo.png/220px-Minecraft_logo.png",
+    img="https://cdn.mos.cms.futurecdn.net/RhxYP5VZuYbpXFdKJSj3Sn.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=8
 ),
@@ -184,7 +184,7 @@ Game(
     publisher="Nintendo",
     about_game="Animal Crossing: New Horizons is a life simulation game that lets players create their own island paradise. It's a relaxing and charming experience filled with adorable anthropomorphic animals.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Animal_Crossing_New_Horizons.jpg/220px-Animal_Crossing_New_Horizons.jpg",
+    img="https://animalcrossingworld.com/wp-content/uploads/2020/01/animal-crossing-new-horizons-key-artwork-january-2020-large-logo.png",
     system_support="Nintendo Switch",
     user_id=10
 ),
@@ -196,7 +196,7 @@ Game(
     publisher="Sony Interactive Entertainment",
     about_game="The Last of Us Part II is an action-adventure game that continues Ellie's story in a post-apocalyptic world. It explores themes of revenge and survival in a harsh environment.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/The_Last_of_Us_Part_II.jpg/220px-The_Last_of_Us_Part_II.jpg",
+    img="https://pbs.twimg.com/media/EUazRzJUEAACLA3.jpg:large",
     system_support="PS4, PS5",
     user_id=11
 ),
@@ -208,7 +208,7 @@ Game(
     publisher="Team Cherry",
     about_game="Hollow Knight is a 2D action-platformer set in a beautifully hand-drawn underground world. Players explore, battle creatures, and uncover mysteries in this atmospheric adventure.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Hollow_Knight_cover_art.jpg/220px-Hollow_Knight_cover_art.jpg",
+    img="https://images.squarespace-cdn.com/content/v1/606d159a953867291018f801/1619987265163-9XILMVT3TK4HZ5X6538M/VH_01_1080pjpg.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=12
 ),
@@ -222,7 +222,7 @@ Game(
     publisher="Capcom",
     about_game="Resident Evil Village is a survival horror game that follows Ethan Winters as he explores a mysterious village filled with grotesque creatures. It continues the story of Resident Evil 7.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Resident_Evil_Village_Cover_Art.jpg/220px-Resident_Evil_Village_Cover_Art.jpg",
+    img="https://img.opencritic.com/game/10995/w2OL9oQF.jpg",
     system_support="PC, Xbox, PlayStation",
     user_id=15
 ),
@@ -234,7 +234,7 @@ Game(
     publisher="Sony Interactive Entertainment",
     about_game="Death Stranding is an action-adventure game that explores themes of isolation and connection in a post-apocalyptic world. Players traverse a vast, haunting landscape as Sam Porter Bridges.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Death_Stranding.jpg/220px-Death_Stranding.jpg",
+    img="https://xxboxnews.blob.core.windows.net/prod/sites/2/2022/08/DS_PC_HERO-80fb1015e83dca1e68ea.jpg",
     system_support="PC, PS4, PS5",
     user_id=16
 ),
@@ -247,7 +247,7 @@ Game(
     publisher="Yacht Club Games",
     about_game="Cyber Shadow is a 2D action-platformer that pays homage to classic ninja games. Players control Shadow, a cybernetic ninja, on a mission to save his clan from a mechanical threat.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Cyber_Shadow_Cover_Art.jpg/220px-Cyber_Shadow_Cover_Art.jpg",
+    img="https://www.heypoorplayer.com/wp-content/uploads/2020/12/Indie-World-Showcase-Cyber-Shadow-Title.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=18
 ),
@@ -259,7 +259,7 @@ Game(
     publisher="miHoYo",
     about_game="Genshin Impact is an open-world action RPG with gacha elements. Players travel the fantasy world of Teyvat, collect characters with unique abilities, and uncover the mysteries of the land.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Genshin_Impact_cover_art.jpg/220px-Genshin_Impact_cover_art.jpg",
+    img="https://editors.dexerto.com/wp-content/uploads/2020/10/GenshinImpactmiHoYo.jpg",
     system_support="PC, PS4, PS5, iOS, Android",
     user_id=19
 ),
@@ -271,21 +271,9 @@ Game(
     publisher="Bandai Namco Entertainment",
     about_game="Dark Souls III is an action RPG known for its challenging gameplay. Players journey through a dark and desolate world, facing formidable bosses and uncovering the lore of the series.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Dark_Souls_III.jpg/220px-Dark_Souls_III.jpg",
+    img="https://files.kstatecollegian.com/2016/04/c0bbe758-529f-4fce-ab50-bd88f75149da.jpg",
     system_support="PC, Xbox, PlayStation",
     user_id=20
-),
-
-Game(
-    game_title="Cyber Connect 2",
-    price=50,
-    developer="CyberConnect2",
-    publisher="CyberConnect2",
-    about_game="Cyber Connect 2 is an action RPG that follows a group of hackers in a virtual world. Players explore the digital landscape, solve puzzles, and uncover the secrets of cyberspace.",
-    description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/CyberConnect2_Logo.png/220px-CyberConnect2_Logo.png",
-    system_support="PC, Xbox, PlayStation, Nintendo Switch",
-    user_id=22
 ),
 
 Game(
@@ -295,7 +283,7 @@ Game(
     publisher="Activision",
     about_game="Sekiro: Shadows Die Twice is an action-adventure game set in feudal Japan. Players control a shinobi named Wolf as he embarks on a mission of revenge and redemption.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Sekiro_Sword_Die_Twice_cover.png/220px-Sekiro_Sword_Die_Twice_cover.png",
+    img="https://wallpapers.com/images/hd/sekiro-shadows-die-twice-cover-pgaw054npl3h6o6y.jpg",
     system_support="PC, Xbox, PlayStation",
     user_id=2
 ),
@@ -307,7 +295,7 @@ Game(
     publisher="Innersloth",
     about_game="Among Us is a multiplayer party game where players work together on a spaceship but some are impostors trying to sabotage the mission. Deduction and teamwork are key.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Among_Us_logo.png/220px-Among_Us_logo.png",
+    img="https://pbs.twimg.com/media/E5cWwLNX0AMuZMC.png",
     system_support="PC, iOS, Android",
     user_id=4
 ),
@@ -319,7 +307,7 @@ Game(
     publisher="Maddy Makes Games",
     about_game="Celeste is a challenging 2D platformer that tells the story of Madeline's journey up the titular mountain. It explores themes of mental health and determination.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Celeste_cover_art.jpg/220px-Celeste_cover_art.jpg",
+    img="https://3.bp.blogspot.com/-bnVIFKTTMAE/WmsM1WDvGUI/AAAAAAAAXGo/iTMHpHmBsjktvH8NmKp9y2bSd1pzZc4uQCLcBGAs/w1200-h630-p-k-no-nu/celeste-capa.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=5
 ),
@@ -331,7 +319,7 @@ Game(
     publisher="Atlus",
     about_game="Persona 5 is a Japanese RPG that follows a group of high school students who lead double lives as phantom thieves. They use their Personas to change the hearts of corrupt adults.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Persona_5_cover_art.jpg/220px-Persona_5_cover_art.jpg",
+    img="https://miro.medium.com/v2/resize:fit:1358/1*l1AMsvG2A6vJhgNVprYeFQ.jpeg",
     system_support="PS4, PS5",
     user_id=6
 ),
@@ -343,7 +331,7 @@ Game(
     publisher="Supergiant Games",
     about_game="Hades is an action roguelike where players control Zagreus, the son of Hades, as he attempts to escape the Underworld. Each run is unique with various weapons and abilities.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Hades_video_game_cover_art.jpg/220px-Hades_video_game_cover_art.jpg",
+    img="https://www.privatedivision.com/wp-content/uploads/2021/06/Hades_Keyart_3840x2160-scaled.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=2
 ),
@@ -355,13 +343,13 @@ Game(
     publisher="ConcernedApe",
     about_game="Stardew Valley is a farming simulation game that lets players build and manage their own farm. It offers a peaceful and charming rural life experience.",
     description="temp info for now",
-    img="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Stardew_Valley_cover.jpg/220px-Stardew_Valley_cover.jpg",
+    img="https://images.mein-mmo.de/medien/2020/05/Stardew-Valley-titel-1140x445-1.jpg",
     system_support="PC, Xbox, PlayStation, Nintendo Switch",
     user_id=8
 ),
 
     Game(
-        game_title="Overwatch",
+        game_title="Overwatch 2",
         price=30,
         developer="Blizzard Entertainment",
         publisher="Blizzard Entertainment",
