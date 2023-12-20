@@ -10,6 +10,7 @@ function AllGames() {
   const [gamesToShow, setGamesToShow] = useState(10);
   const gamesPerBatch = 10;
   const [sortBy, setSortBy] = useState(""); // State for sorting
+  const [sortedGames, setSortedGames] = useState([]);
 
   useEffect(() => {
     dispatch(getAllGamesThunk());
@@ -30,18 +31,18 @@ function AllGames() {
       .slice()
       .sort((a, b) => a.game_title.localeCompare(b.game_title));
     setSortBy("alphabetical");
-
-    // Dispatch the sorted games directly without modifying the state
-    dispatch(getAllGamesThunk(sortedGames));
+    setSortedGames(sortedGames);
+    setGamesToShow(10); // Reset the number of games to show
   };
 
   const sortByPrice = () => {
     const sortedGames = allGames.slice().sort((a, b) => a.price - b.price);
     setSortBy("price");
-
-    // Dispatch the sorted games directly without modifying the state
-    dispatch(getAllGamesThunk(sortedGames));
+    setSortedGames(sortedGames);
+    setGamesToShow(10); // Reset the number of games to show
   };
+
+  const displayedGames = sortBy ? sortedGames : allGames;
 
   return (
     <div className="all-games-grid">
@@ -49,7 +50,7 @@ function AllGames() {
         <button onClick={sortAlphabetically}>Sort Alphabetically</button>
         <button onClick={sortByPrice}>Sort by Price</button>
       </div>
-      {allGames.slice(0, gamesToShow).map((game) => (
+      {displayedGames.slice(0, gamesToShow).map((game) => (
         <div key={game.id} className="game-container">
           <div className="test-123">
             <div className="left-img">
