@@ -8,7 +8,7 @@
 }
 .top-left-photo {
     width: 100%;
-    height: 350px;
+    height: 100%;
     object-fit: fill;
 }
 
@@ -29,20 +29,21 @@
 
 .top-game-container{
     border: 2px groove black;
-
+    min-width: 1024px;
+    width: 1224px;
 
     display: flex;
 
     justify-content: center;
-    height: 350px;
+    height: 420px;
 }
 
 .top-left-contain{
-    flex:50%;
+    flex:60%;
 }
 
 .top-right-contain{
-    flex:50%;
+    flex:40%;
 }
 
 

@@ -10,7 +10,8 @@ function AllGames() {
   const [gamesToShow, setGamesToShow] = useState(10);
   const gamesPerBatch = 10;
   const [sortBy, setSortBy] = useState(""); // State for sorting
-  const [sortedGames, setSortedGames] = useState([]);
+  const [sortDirection, setSortDirection] = useState("asc"); // State for sort direction
+  const [sortedGames, setSortedGames] = useState([]); // State for sorted games
 
   useEffect(() => {
     dispatch(getAllGamesThunk());
@@ -27,16 +28,34 @@ function AllGames() {
   };
 
   const sortAlphabetically = () => {
-    const sortedGames = allGames
-      .slice()
-      .sort((a, b) => a.game_title.localeCompare(b.game_title));
+    const newSortDirection = sortDirection === "asc" ? "desc" : "asc";
+    setSortDirection(newSortDirection);
+
+    const sortedGames = allGames.slice().sort((a, b) => {
+      if (newSortDirection === "asc") {
+        return a.game_title.localeCompare(b.game_title);
+      } else {
+        return b.game_title.localeCompare(a.game_title);
+      }
+    });
+
     setSortBy("alphabetical");
     setSortedGames(sortedGames);
     setGamesToShow(10); // Reset the number of games to show
   };
 
   const sortByPrice = () => {
-    const sortedGames = allGames.slice().sort((a, b) => a.price - b.price);
+    const newSortDirection = sortDirection === "asc" ? "desc" : "asc";
+    setSortDirection(newSortDirection);
+
+    const sortedGames = allGames.slice().sort((a, b) => {
+      if (newSortDirection === "asc") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+
     setSortBy("price");
     setSortedGames(sortedGames);
     setGamesToShow(10); // Reset the number of games to show
