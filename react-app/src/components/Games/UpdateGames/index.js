@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getOneGameThunk, updateGameThunk } from "../../../store/game";
 import { useHistory } from "react-router-dom";
-import "./UpdateGames.css"
+import "./UpdateGames.css";
 
 const UpdateGame = () => {
   const { id } = useParams();
@@ -208,8 +208,10 @@ const UpdateGame = () => {
             )}
           </div>
 
-          <div>
-            <button type="submit">Update Game</button>
+          <div className="update-game-button">
+            <button className="update-game-button" type="submit">
+              Update Game
+            </button>
           </div>
         </form>
       </div>

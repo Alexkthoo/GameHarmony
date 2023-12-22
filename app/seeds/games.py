@@ -6,7 +6,7 @@ from faker import Faker
 
 def seed_games():
     games= [
-        Game(game_title = "The Legend of Zelda: Breath of the Wild", price = 60, developer = "Nintendo EPD", publisher = "Nintendo", about_game = "The Legend of Zelda: Breath of the Wild wiki strategy guide includes a full game Walkthrough to all dungeons, Interactive Map of all important locations, like Shrines, collectibles like Memories and Korok Seed locations, and many other helpful sections. The Legend of Zelda: BOTW was released for Wii U and Nintendo Switch on March 3, 2017.", description = "temp info for now", img = "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg", system_support = "Switch", user_id = 1),
+        Game(game_title = "The Legend of Zelda: Breath of the Wild", price = 60, developer = "Nintendo EPD", publisher = "Nintendo", about_game = "The Legend of Zelda: Breath of the Wild wiki strategy guide includes a full game Walkthrough to all dungeons, Interactive Map of all important locations, like Shrines, collectibles like Memories and Korok Seed locations, and many other helpful sections. The Legend of Zelda: BOTW was released for Wii U and Nintendo Switch on March 3, 2017.", description = "temp info for now", img = "https://www.justpressplayonline.com/img/blog/Blog-Large-botw1.jpg", system_support = "Switch", user_id = 1),
         Game(
     game_title="God of War II",
     price=55,
@@ -50,7 +50,7 @@ Game(
     publisher="Electronic Arts",
     about_game="The Sims 4 allows players to create and control people in a virtual world. With new features and expanded creativity, players can build unique homes, develop relationships, and shape the lives of their Sims.",
     description="temp info for now",
-    img="https://m.media-amazon.com/images/I/71otyq1xFNL._AC_UF1000,1000_QL80_.jpg",
+    img="https://image.api.playstation.com/vulcan/img/rnd/202111/3019/Btg9YJMDRcWgsbD5E6rOcdT5.jpg",
     system_support="PC, PS4, Xbox One",
     user_id=5
 ),
@@ -86,7 +86,7 @@ Game(
     publisher="Ubisoft",
     about_game="Assassin's Creed Odyssey takes players to ancient Greece, where they embark on a grand adventure as a mercenary. With a vast open world and impactful choices, it's a journey filled with mythology and intrigue.",
     description="temp info for now",
-    img="https://image.api.playstation.com/vulcan/ap/rnd/202008/2707/TVB4FB1nnoKbl7LrSIJrUqTV.png",
+    img="https://www.thegamecrater.com/wp-content/uploads/2020/11/ACD_EMEA_KEYART_WIDE_UCS_RGB_NoLogo.jpg",
     system_support="PC, PS4, Xbox One",
     user_id=8
 ),

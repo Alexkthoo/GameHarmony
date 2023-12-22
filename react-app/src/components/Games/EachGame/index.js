@@ -56,6 +56,10 @@ function SingleGame() {
     history.push(`/reviews/${reviewId}/update`);
   };
 
+  const handleAddToCart = () => {
+    alert("Feature coming soon!");
+  };
+
   return (
     <div className="each-game-container">
       <div className="game-info">
@@ -78,6 +82,17 @@ function SingleGame() {
             {/* <div className="eg-game-rating">rating</div> */}
             <div className="eg-game-developer">Developer: {game.developer}</div>
             <div className="eg-game-publisher">Publisher: {game.publisher}</div>
+            <div className="eg-system-price">
+              <div className="eg-system-support">
+                System Support: {game.system_support}
+              </div>
+              <div className="game-price">
+                ${game.price}
+                <button className="add-to-cart" onClick={handleAddToCart}>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div className="review-delete-update-container"></div>
@@ -87,10 +102,22 @@ function SingleGame() {
               <div className="icon"></div>
               <div className="name">
                 <p className="name-p">
-                  {review.user?.username.toUpperCase()} Wrote:{" "}
+                  {review.user?.username.toUpperCase()}'s review:{" "}
                   {review.description}
                 </p>
                 <img className="review-img" src={review.img} />
+                <div className="delete-review-button">
+                  {user && user.id === review.user?.id && (
+                    <>
+                      <button onClick={() => handleDeleteReview(review.id)}>
+                        Delete Review
+                      </button>
+                      <button onClick={() => handleUpdateReview(review.id)}>
+                        Update Review
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           ))}

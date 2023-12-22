@@ -14,3 +14,13 @@
     width: 310px;
 
 }
+
+.update-game-button{
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
