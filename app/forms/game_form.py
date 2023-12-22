@@ -11,7 +11,7 @@ class GameForm(FlaskForm):
     developer = StringField("Developer", validators=[DataRequired(), Length(max = 255)])
     publisher = StringField("Publisher", validators=[DataRequired(), Length(max = 255)])
     about_game = StringField("About Game", validators=[DataRequired(), Length(max = 400)])
-    description = StringField("Description", validators=[DataRequired(), Length(max = 3000)])
+    description = StringField("Description", validators=[Length(max = 3000)]) #description = StringField("Description", validators=[DataRequired(), Length(max = 3000)])
     img = FileField("Game Image", validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
     img2 = FileField("Game Image", validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
     img3 = FileField("Game Image", validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])

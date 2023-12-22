@@ -49,9 +49,9 @@ const UpdateGame = () => {
     if (!aboutGame.length || aboutGame.length > 500)
       errorList.aboutGame =
         "Note's About Game must be between 1 and 501 characters";
-    if (!description.length || description.length > 500)
-      errorList.description =
-        "Note's Description must be between 1 and 501 characters";
+    // if (!description.length || description.length > 500)
+    //   errorList.description =
+    //     "Note's Description must be between 1 and 501 characters";
     if (!systemSupport)
       errorList.systemSupport = "System Support Field require";
 
@@ -152,11 +152,12 @@ const UpdateGame = () => {
 
           <div>
             <label className="label">About Game</label>
-            <input
-              type="text"
+            <textarea
+              type="textarea"
               placeholder="publisher"
               value={aboutGame}
               onChange={(e) => setAboutGame(e.target.value)}
+              className="update-games-description-field"
             />
 
             {errors.aboutGame && (
@@ -166,7 +167,7 @@ const UpdateGame = () => {
             )}
           </div>
 
-          <div>
+          {/* <div>
             <label className="label">Description</label>
 
             <textarea
@@ -182,7 +183,7 @@ const UpdateGame = () => {
                 *{errors.description}
               </p>
             )}
-          </div>
+          </div> */}
 
           <div>
             <label className="label">System Support</label>
