@@ -139,7 +139,7 @@ function CreateGameReviewForm() {
         </div>
 
         <div className="create-review-button">
-          <button type="submit" disabled={disabled}>
+          <button className="add-review-button" type="submit" disabled={disabled}>
             Add Review
           </button>
 

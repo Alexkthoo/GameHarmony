@@ -18,3 +18,13 @@ gap: 25px;
 .h1Review {
     margin-bottom: 15px;
 }
+
+.add-review-button {
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
