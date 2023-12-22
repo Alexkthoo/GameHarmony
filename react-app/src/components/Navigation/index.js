@@ -12,7 +12,7 @@ function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const businessOwner = sessionUser;
 
-  const linkColor = location.pathname === "/" ? "blue" : "red";
+  const linkColor = location.pathname === "/" ? "black" : "black";
 
   return (
     <>
