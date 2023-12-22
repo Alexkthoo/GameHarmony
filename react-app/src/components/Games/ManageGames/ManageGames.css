@@ -59,3 +59,7 @@
     font-weight: 600;
     align-items: center;
 }
+
+#update-button {
+    color: black;
+}
