@@ -61,9 +61,9 @@ function SignupFormModal() {
   };
 
   return (
-    <>
+    <div className="sign-up-modal">
       <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="sign-up-form-modal" onSubmit={handleSubmit}>
         <label>
           Email
           <input
@@ -118,9 +118,9 @@ function SignupFormModal() {
             </p>
           )}
         </label>
-        <button type="submit">Sign Up</button>
+        <button id="sign-up-button" type="submit">Sign Up</button>
       </form>
-    </>
+    </div>
   );
 }
 

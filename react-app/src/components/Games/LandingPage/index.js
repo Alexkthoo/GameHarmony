@@ -46,6 +46,9 @@ function LandingPage() {
         <div className="top-right-contain">
           <div className="lp-game-title">{topGame.game_title}</div>
           <div className="lp-about-game">{topGame.about_game}</div>
+          <div>Developer: {topGame.developer}</div>
+          <div>Publisher: {topGame.publisher}</div>
+          <div>System Support: {topGame.system_support}</div>
         </div>
       </NavLink>
 

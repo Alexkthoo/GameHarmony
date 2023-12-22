@@ -82,7 +82,7 @@ const UpdateGame = () => {
 
   return (
     <div className="update-game-container">
-      <h1>testing update shit 123</h1>
+      <h1>Update Game Information</h1>
       <div>
         <form className="game-form" onSubmit={handleSubmit}>
           <div>

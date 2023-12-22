@@ -66,8 +66,12 @@ function AllGames() {
   return (
     <div className="all-games-grid">
       <div className="sorting-options">
-        <button onClick={sortAlphabetically}>Sort Alphabetically</button>
-        <button onClick={sortByPrice}>Sort by Price</button>
+        <button className="sort-alpha-button" onClick={sortAlphabetically}>
+          Sort Alphabetically
+        </button>
+        <button className="sort-price-button" onClick={sortByPrice}>
+          Sort by Price
+        </button>
       </div>
       {displayedGames.slice(0, gamesToShow).map((game) => (
         <div key={game.id} className="game-container">
@@ -82,11 +86,14 @@ function AllGames() {
                 </NavLink>
               </div>
               <div className="game-desc">{game.about_game}</div>
-              <div className="game-price">
-                ${game.price}
-                <button className="add-to-cart" onClick={handleAddToCart}>
-                  Add to Cart
-                </button>
+              <div className="allgames-system-price">
+                <div className="allgames-system-support">{game.system_support}</div>
+                <div className="game-price">
+                  ${game.price}
+                  <button className="add-to-cart" onClick={handleAddToCart}>
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             </div>
           </div>

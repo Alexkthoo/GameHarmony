@@ -9,7 +9,6 @@ function DeleteGame({ gameId }) {
   const history = useHistory();
 
   const yesbutton = async () => {
-
     await dispatch(deleteGameThunk(gameId));
     history.push(`/games`);
   };
@@ -20,7 +19,7 @@ function DeleteGame({ gameId }) {
         {/* <h2>Are you sure you want to remove this game from the listings?</h2> */}
         <div id="delete-game-button">
           <button id="top-button-delete" onClick={yesbutton}>
-            Yes (Delete Game)
+            Delete Game
           </button>
         </div>
       </div>

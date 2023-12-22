@@ -231,7 +231,7 @@ function CreateGame() {
             type="file"
             accept="image/*"
             onChange={(e) => setImg(e.target.files[0])}
-            className=""
+            className="create-game-input-img-button"
           />
 
           {errors.img && (
