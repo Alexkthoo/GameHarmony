@@ -46,9 +46,9 @@ function CreateGame() {
     if (!aboutGame.length || aboutGame.length > 500)
       errorList.aboutGame =
         "Note's About Game must be between 1 and 501 characters";
-    if (!description.length || description.length > 500)
-      errorList.description =
-        "Note's Description must be between 1 and 501 characters";
+    // if (!description.length || description.length > 500)
+    //   errorList.description =
+    //     "Note's Description must be between 1 and 501 characters";
     if (!systemSupport)
       errorList.systemSupport = "System Support Field require";
     if (!img)
@@ -168,10 +168,10 @@ function CreateGame() {
 
         <div>
           <label className="label">About Game</label>
-          <input
-            className="create-game-input"
-            type="text"
-            placeholder="publisher"
+          <textarea
+            className="create-game-input-desc"
+            type="textarea"
+            placeholder="About Game"
             value={aboutGame}
             onChange={(e) => setAboutGame(e.target.value)}
           />
@@ -183,7 +183,7 @@ function CreateGame() {
           )}
         </div>
 
-        <div>
+        {/* <div>
           <label className="label">Description</label>
 
           <textarea
@@ -199,7 +199,7 @@ function CreateGame() {
               *{errors.description}
             </p>
           )}
-        </div>
+        </div> */}
 
         <div>
           <label className="label">System Support</label>
