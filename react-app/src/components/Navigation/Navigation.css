@@ -15,21 +15,24 @@
   flex-direction: column;
   gap: 10px;
   /* justify-content: flex-start; */
+  display: flex;
+  align-items: center;
 }
 
 .profile-dropdown>button {
-  background-color: #00890D;
+
   width: 100px;
   padding: 10px 10px;
-  color: white;
-  border-radius: 4px;
-  /* border: 2px solid #d32323; */
-  border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .profile-dropdown>button:hover {
   cursor: pointer;
-  background-color: #43C174
 }
 
 .profile-dropdown>li:first-child {
@@ -116,11 +119,23 @@ ul {
 .logo-container>h1 {
   color: rgb(30, 34, 30);
   font-size: 28px;
+  text-decoration: underline;
 }
 
 #kelp-image {
   height: 30px;
   margin-left: 5px;
+}
+
+.log-out-button button{
+
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
 }
 
 

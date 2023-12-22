@@ -27,7 +27,7 @@
   }
 
   .game-details {
-    flex: 25%;
+    flex: 10%;
   }
 
   .game-desc{
@@ -45,6 +45,9 @@
 
   .game-title {
     font-weight: bold;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 20px;
   }
 
   .game-link {
@@ -66,6 +69,59 @@
   }
 
   .add-to-cart{
-    height: 40px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
 
   }
+
+  .sorting-options {
+
+      width: 100%;
+      max-width: 900px;
+      /* height: 204px; */
+      margin-bottom: 10px;
+      /* border: 1px solid #ccc; */
+      /* border-radius: 5px; */
+      /* overflow: hidden; */
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 10px;
+
+  }
+
+  .sorting-options button {
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .allgames-system-price{display: flex;
+    flex-direction: row;
+    /* align-content: center; */
+    align-items: center;}
+
+.allgames-system-support{
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.load-more-button {
+  padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
