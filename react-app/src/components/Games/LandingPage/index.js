@@ -19,7 +19,7 @@ function LandingPage() {
   }
 
   //shuffle games to
-  const shuffledGames = [...allGames].sort(() => Math.random() - 0.5);
+  const shuffledGames = [...allGames].sort(() => Math.random() - 0.50);
 
   let count = 1;
 
