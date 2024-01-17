@@ -102,7 +102,7 @@ function AllGames() {
       {gamesToShow < allGames.length && (
         <div className="load-more-container">
           <button className="load-more-button" onClick={loadMoreGames}>
-            Load More
+            Load More Games
           </button>
         </div>
       )}
