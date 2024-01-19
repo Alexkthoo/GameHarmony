@@ -1,148 +1,132 @@
-# Flask React Project
+# Full Stack Project (GameHarmony)
 
-This is the starter for the Flask React project.
+Welcome to GameHarmony - Your Personalized Gaming Universe!
 
-## Getting started
-1. Clone this repository (only this branch)
+🎮 Discover. Match. Play. 🌟
 
-2. Install dependencies
+At GameHarmony, we're not just another gaming platform – we're your gateway to a universe of games tailored just for you! Like a friend who knows your gaming soul, we're here to connect you with games that resonate with your unique preferences.
 
-      ```bash
-      pipenv install -r requirements.txt
-      ```
+What Sets Us Apart?
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
+🔍 Personalized Game Matching: Say goodbye to endless scrolling and hello to precision. Our upcoming feature, a smart questionnaire, will understand your gaming style – be it your preferred genre, playtime, or atmosphere – and match you with games that feel like they were made just for you.
 
-4. Make sure the SQLite3 database connection URL is in the **.env** file
+🎲 A World of Games at Your Fingertips: From indie gems to blockbuster hits, GameHarmony offers an ever-expanding universe of games. Whether you're a casual gamer or a hardcore enthusiast, our diverse library has something special for everyone.
 
-5. This starter organizes all tables inside the `flask_schema` schema, defined
-   by the `SCHEMA` environment variable.  Replace the value for
-   `SCHEMA` with a unique name, **making sure you use the snake_case
-   convention**.
+👥 Community & Connection: Join a community where your gaming passions are shared, celebrated, and connected. GameHarmony is more than a platform; it's a community of gamers, for gamers.
 
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
+Coming Soon: Keep an eye out for our personalized questionnaire feature, set to revolutionize how you discover your next favorite game!
 
-   ```bash
-   pipenv shell
-   ```
+Dive into GameHarmony today and let your gaming journey begin!
 
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+**Click on the link below to visit the live site!**<br>
+[![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+](https://gameharmony.onrender.com)
 
 
-## Deployment through Render.com
+**Languages Used**<br>
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+ ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+ ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+ ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+ ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+ ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+ ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+ ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-First, refer to your Render.com deployment articles for more detailed
-instructions about getting started with [Render.com], creating a production
-database, and deployment debugging tips.
+<!-- ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) -->
 
-From the [Dashboard], click on the "New +" button in the navigation bar, and
-click on "Web Service" to create the application that will be deployed.
+**Site Preview**<br>
 
-Look for the name of the application you want to deploy, and click the "Connect"
-button to the right of the name.
+<!-- ![Alt Text](https://cdn.discordapp.com/attachments/1110721109076221993/1195912430971260958/image.png) -->
 
-Now, fill out the form to configure the build and start commands, as well as add
-the environment variables to properly deploy the application.
+<!-- ![Alt text](<Screen-Recording-2024-01-13-at-11.17.31 AM.gif>) -->
 
-### Part A: Configure the Start and Build Commands
+## What can you do on GameHarmony?
 
-Start by giving your application a name.
+**1. Check out reviews and ratings for games helping others make informed decisions!**<br>
 
-Leave the root directory field blank. By default, Render will run commands from
-the root directory.
+- Navigate through the website as either a registered or unregistered user. Create your own account or simply log in as the demo user for quick access!
+- View available businesses and see what other users have to say about it
 
-Make sure the Environment field is set set to "Python 3", the Region is set to
-the location closest to you, and the Branch is set to "main".
+**2. What are the perks of being a registered user?**<br>
 
-Next, add your Build command. This is a script that should include everything
-that needs to happen _before_ starting the server.
+- Create your own business in Bikini Bottom
+- Edit or delete your existing spots
+- Other users can leave reviews on your existing spots
+- Post reviews on other spots
 
-For your Flask project, enter the following command into the Build field, all in
-one line:
+## How to download GameHarmony on your local computer
 
-```shell
-# build command - enter all in one line
-npm install --prefix react-app &&
-npm run build --prefix react-app &&
-pip install -r requirements.txt &&
-pip install psycopg2 &&
-flask db upgrade &&
-flask seed all
-```
+1. In the root folder:
 
-This script will install dependencies for the frontend, and run the build
-command in the __package.json__ file for the frontend, which builds the React
-application. Then, it will install the dependencies needed for the Python
-backend, and run the migration and seed files.
+- create an .env file
+- copy over .envexample content into the new .env file
+- run these commands in terminal
 
-Now, add your start command in the Start field:
+  ```bash
+  pipenv requirements > requirements.txt
+  pipenv install
+  pipenv shell
+  flask db upgrade
+  flask seed all
+  flask run
+  ```
 
-```shell
-# start script
-gunicorn app:app
-```
+2. cd into the root folder and then run `pipenv run flask run` to start the back-end
 
-_If you are using websockets, use the following start command instead for increased performance:_
+3. cd into the react-app folder and then run `npm start` to start the front-end
 
-`gunicorn --worker-class eventlet -w 1 app:app`
+# Site Summary
 
-### Part B: Add the Environment Variables
+## Landing Page
 
-Click on the "Advanced" button at the bottom of the form to configure the
-environment variables your application needs to access to run properly. In the
-development environment, you have been securing these variables in the __.env__
-file, which has been removed from source control. In this step, you will need to
-input the keys and values for the environment variables you need for production
-into the Render GUI.
+<!-- ![](img.png) -->
 
-Click on "Add Environment Variable" to start adding all of the variables you
-need for the production environment.
+- This page generates four randomly selected games to present a brief info regarding the game itself.
 
-Add the following keys and values in the Render GUI form:
+## Main Page
 
-- SECRET_KEY (click "Generate" to generate a secure secret for production)
-- FLASK_ENV production
-- FLASK_APP app
-- SCHEMA (your unique schema name, in snake_case)
-- REACT_APP_BASE_URL (use render.com url, located at top of page, similar to
-  https://this-application-name.onrender.com)
+<!-- ![All business](image.png) -->
 
-In a new tab, navigate to your dashboard and click on your Postgres database
-instance.
+- Click the 'View All Games' link to navigate here
+- The homepage displays a comprehensive list of all available games featured on GameHarmony.
+- This page is also accessible to anyone (registered and unregistered users)
 
-Add the following keys and values:
+## Sign Up
 
-- DATABASE_URL (copy value from Internal Database URL field)
+<!-- ![Sign up](https://cdn.discordapp.com/attachments/1110721109076221993/1196687779342594048/image.png) -->
 
-_Note: Add any other keys and values that may be present in your local __.env__
-file. As you work to further develop your project, you may need to add more
-environment variables to your local __.env__ file. Make sure you add these
-environment variables to the Render GUI as well for the next deployment._
+- Unregistered users have the option to create an account through the dropdown menu located at the top-right corner
+- In the event a user attempts to input invalid information, error messages will populate to guide the user to resolve them accurately
+- Upon successful completion of the Sign Up form, the new user will be logged in automatically
 
-Next, choose "Yes" for the Auto-Deploy field. This will re-deploy your
-application every time you push to main.
+## Log In
 
-Now, you are finally ready to deploy! Click "Create Web Service" to deploy your
-project. The deployment process will likely take about 10-15 minutes if
-everything works as expected. You can monitor the logs to see your build and
-start commands being executed, and see any errors in the build process.
+<!-- ![Login](https://media.discordapp.net/attachments/1110721109076221993/1196688534917099602/image.png) -->
 
-When deployment is complete, open your deployed site and check to see if you
-successfully deployed your Flask application to Render! You can find the URL for
-your site just below the name of the Web Service at the top of the page.
+- Existing users can access their accounts through the designated login portal through the dropdown menu located at the top-right corner
+- To gain full access to Kelp quickly, simply click the "Sign In as Demo User" button. This will allow you to creating new business, managing existing businesses, and leave reviews on others' businesses
 
-[Render.com]: https://render.com/
-[Dashboard]: https://dashboard.render.com/
+## Leave a Review
+
+<!-- ![Leave a comment](image.png) -->
+
+- Registered users can submit reviews provided that they have not previously submitted a review for the same spot
+- Each review requires a description and Thumbs up or down button, while the inclusion of photos remains optional
+- Newly submitted reviews dynamically appear on the current page
+- Users may modify or delete their reviews conveniently through the business details page
+
+## Add a Business
+
+<!-- ![Add a Spot](https://cdn.discordapp.com/attachments/1110721109076221993/1196688537177829487/image.png) -->
+
+- As a logged-in user, create a game on GameHarmony website.
+- Each new listing requires a name, description, category, price, and image!
+
+## Manage Business
+
+<!-- ![Manage Spot](https://cdn.discordapp.com/attachments/1110721109076221993/1196688537702109274/image.png) -->
+
+- User is able to update or delete the spot on the spot details page
+- Each update requires a name, description, category, price, and image!
