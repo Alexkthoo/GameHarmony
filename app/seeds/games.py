@@ -458,6 +458,17 @@ Game(
         system_support="PS5",
         user_id=2
     ),
+    Game(
+        game_title="Palworld",
+        price=29.99,
+        developer="Pocket Pair, Inc.",
+        publisher="Pocket Pair, Inc.",
+        about_game='Palworld is an action-adventure, survival, and monster-taming game created and published by Japanese developer Pocket Pair. The game is set in an open world populated with animal-like creatures called "Pals", which players can battle and capture to use for base building, traversal, and combat.',
+        description="temp info for now",
+        img="https://cdn.wccftech.com/wp-content/uploads/2023/06/palworld_ConceptArt_01-scaled.jpg",
+        system_support="Steam and Xbox",
+        user_id=4
+    ),
         ]
 
 
