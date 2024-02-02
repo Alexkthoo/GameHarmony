@@ -469,6 +469,28 @@ Game(
         system_support="Steam and Xbox",
         user_id=4
     ),
+    Game(
+        game_title="Palworld",
+        price=29.99,
+        developer="Pocket Pair, Inc.",
+        publisher="Pocket Pair, Inc.",
+        about_game='Palworld is an action-adventure, survival, and monster-taming game created and published by Japanese developer Pocket Pair. The game is set in an open world populated with animal-like creatures called "Pals", which players can battle and capture to use for base building, traversal, and combat.',
+        description="temp info for now",
+        img="https://cdn.wccftech.com/wp-content/uploads/2023/06/palworld_ConceptArt_01-scaled.jpg",
+        system_support="Steam and Xbox",
+        user_id=4
+    ),
+    Game(
+        game_title = "Lethal Company",
+        price = 9.99,
+        developer = "Zeekerss",
+        publisher = "Zeekerss",
+        about_game = "A co-op horror about scavenging at abandoned moons to sell scrap to the Company.",
+        description = "A co-op horror about scavenging at abandoned moons to sell scrap to the Company.",
+        img = "https://m.media-amazon.com/images/M/MV5BNWI5NzhjZDYtNDQ5MS00MGQ3LTk5YTgtZGUzZjU4YWQ1ZGRiXkEyXkFqcGdeQXVyMjQxNzM0MjI@._V1_.jpg",
+        system_support = "PC",
+        user_id = 5
+    ),
         ]
 
 
